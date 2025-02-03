@@ -12,7 +12,7 @@ body{
     --verde-segundo: #52B788;
 }
 
-.container {
+.container-home {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,16 +119,18 @@ span{
     .btn {
         font-size: 1.2rem;
     }
+
+    img{
+        width: 500px;
+        height: 500px;
+        
+    }
+
+
 }
 
 @media (min-width: 1440px) {
-    .container {
-        max-width: 1400px;
-    }
+    
 }
 
-@media (min-width: 1920px) {
-    .container {
-        max-width: 1800px;
-    }
-}
+
