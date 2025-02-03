@@ -1,9 +1,18 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Itim&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Itim&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Protest+Strike&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .container {
     width: 100%;
-    padding: 10px;
-    background-color: #206b16;
+    height: 0px;
+    padding: 20px;
+    background:  #000;
 }
 
 .navigation {
@@ -13,52 +22,77 @@
 }
 
 .hamburguer {
-    display: flex;
+    display: none; /* Esconde o ícone do hambúrguer por padrão */
     flex-direction: column;
     cursor: pointer;
 }
 
-.line {
-    width: 25px;
+.hamburguer .line {
+    width: 50px;
     height: 3px;
-    background-color: #333;
+    background-color: #fff;
     margin: 4px 0;
-    transition: all 0.3s ease;
+    transition: 0.4s;
+    margin-right: 80px;
 }
 
-.hamburguer.open .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+.hamburguer .line.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.hamburguer.open .line:nth-child(2) {
+.hamburguer .line.open:nth-child(2) {
     opacity: 0;
 }
 
-.hamburguer.open .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+.hamburguer .line.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .menu {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    background-color: #3f8329;
-    position: absolute;
-    top: 60px;
-    left: -150%;
-    width: 100%;
-    transition: left 0.3s ease;
+    gap: 20px;
 }
 
 .menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
     left: 0;
-}
-
-.menu li {
+    background-color: #52B788;
+    width: 100%;
     padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.menu li a {
+.logo{
+    color: #52B788;
+    font-weight: 900;
+    font-family: "Inria Serif", serif;
+    font-size: 22px;
+    margin-left: 60px;
+}
+
+a{
     text-decoration: none;
-    color: #333;
+    color: #fff;
+    font-family: "Inria Serif", serif;
+    font-size: 20px;
+}
+
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    .hamburguer {
+        display: flex; /* Mostra o ícone do hambúrguer em dispositivos móveis */
+    }
+
+    .menu {
+        display: none; /* Esconde o menu em dispositivos móveis por padrão */
+    }
+
+    .menu.open {
+        display: flex; /* Mostra o menu quando está aberto */
+    }
 }

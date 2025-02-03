@@ -1,0 +1,134 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Itim&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Itim&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Protest+Strike&display=swap');
+
+body{
+    background: #000;
+}
+
+:root {
+    --verde-principal: #4BD37B;
+    --verde-segundo: #52B788;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+img{
+    height: 400px;
+}
+
+.text h1 {
+    font-size: 2rem;
+    font-family: "Inria Serif", serif;
+    color: var(--verde-principal);
+    padding: 20px;
+}
+
+.text p {
+    font-size: 1.1rem;
+    font-family: "Inria Serif", serif;
+    max-width: 600px;
+    color: var(--verde-segundo);
+    padding: 20px;
+}
+
+.btts {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: var(--verde-principal);
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.btn:hover{
+    background: #4bd37aa5;
+    transition: 0.5s;
+}
+                                                                    
+span{
+    color: #B7E4C7;  
+}
+
+.front{
+    color: #B7E4C7;
+    font-size: 1.3rem;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 40px;
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #4BD37B;
+    cursor: pointer;
+}
+
+.icon:hover{
+    color: #4bd37aa5;
+    transition: 0.5s;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    .profile-img {
+        max-width: 250px;
+    }
+
+    .text {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text h1 {
+        font-size: 2.5rem;
+    }
+
+    .text p {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1800px;
+    }
+}
