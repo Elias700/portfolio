@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Mulish:wght@200;400;700&display=swap');
+
+
+.habilidades-container {
+    margin: 2% auto;
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+}
+
+h2 {
+    font-family: "Inria Serif", serif;
+    color: #4BD37B;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 60px;
+}
+
+.habilidade {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--cor-texto);
+    font-family: "Inria Serif", serif;
+    transition: transform 0.3s ease-in-out;
+}
+
+.habilidade:hover {
+    transform: scale(1.1);
+}
+
+
+.html { background:  orange; }
+.css{ background: rgb(6, 6, 207); }
+.javascript { background: #C7C72E; }
+.react { background: #1F90D6; }
+.angular { background: #C04141; }
+.typescript { background: #2C3F9F; }
+.wordpress { background: #36963C; }
+.figma { background: #9E25B7; }
+
+.html:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.css:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.javascript:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.react:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.angular:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.typescript:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.wordpress:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+.figma:hover{
+    background: #4BD37B;
+    transition: 0.5s;
+}
+
+
+@media (max-width: 768px) {
+    .habilidades-container {
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .container-habilidades {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .habilidade {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .habilidades-container {
+        max-width: 60%;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .habilidade {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .habilidades-container {
+        max-width: 50%;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .habilidade {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+}
