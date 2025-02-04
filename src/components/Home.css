@@ -44,8 +44,11 @@ img{
 
 .btts {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    justify-content: center;
+    align-items: center; /* Garante alinhamento vertical */
+    gap: 10px; /* Adiciona um espaço entre os botões */
+    padding: 20px;
+    width: 100%; /* Garante que o container ocupe toda a largura disponível */
 }
 
 .btn {
@@ -76,7 +79,6 @@ span{
     display: flex;
     gap: 15px;
     margin-top: 20px;
-    padding: 40px;
 }
 
 .icon {
@@ -108,26 +110,54 @@ span{
 }
 
 @media (min-width: 1024px) {
+
+
+    .content{
+        position: relative;
+        right: 300px;
+        bottom: 400px;
+    }
+
     .text h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
+        cursor: pointer;
+    }
+
+    .elias{
+        font-size: 4.2rem;
+        cursor: pointer;
     }
 
     .text p {
         font-size: 1.5rem;
+        cursor: pointer;
     }
 
     .btn {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
+        padding: 20px 50px;
+    }
+
+    .icons{
+        display: flex;
+        justify-content: center;
+    }
+
+    .icon{
+        font-size: 3.5rem;
     }
 
     img{
-        width: 500px;
+        width: 450px;
         height: 500px;
-        
+        position: relative;
+        left: 300px;
+        top: 80px;
+        cursor: pointer;
     }
-
-
 }
+
+
 
 @media (min-width: 1440px) {
     
