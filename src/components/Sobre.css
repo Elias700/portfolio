@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&family=Mulish:wght@200;400;700&display=swap');
+
+:root {
+    --verde-principal: #4BD37B;
+    --verde-segundo: #52B788;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Mulish", Arial, sans-serif;
+    
+}
+
+.sobre-container {
+    margin: 5% auto;
+}
+
+.ajuste-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: var(--verde-principal);
+    font-family: "Inria Serif", serif;
+    font-size: 2rem;
+}
+
+p {
+    color: var(--verde-segundo);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sobre-container {
+        max-width: 60%;
+        position: relative;
+        bottom: 240px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .sobre-container {
+        max-width: 50%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}

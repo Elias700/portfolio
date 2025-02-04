@@ -1,8 +1,12 @@
 
 import './App.css'
+
+import Img from './assets/elias.png'
+
+/* Componentes */
 import Menu from './components/Menu'
 import Home from './components/Home'
-import Img from './assets/elias.png'
+import Sobre from './components/Sobre'
 
 function App() {
 
@@ -11,6 +15,7 @@ function App() {
     <>
       <Menu />
       <Home Img={Img}/>
+      <Sobre />
     </>
   )
 }
