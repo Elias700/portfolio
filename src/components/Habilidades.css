@@ -3,9 +3,7 @@
 
 .habilidades-container {
     margin: 2% auto;
-    text-align: center;
-    position: relative;
-    bottom: 100px;
+    text-align: center; 
 }
 
 h2 {

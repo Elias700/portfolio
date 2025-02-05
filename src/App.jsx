@@ -9,9 +9,9 @@ import Menu from './components/Menu'
 import Home from './components/Home'
 import Sobre from './components/Sobre'
 import Habilidades from './components/Habilidades'
+import Projetos from './components/Projetos'
 
 function App() {
-
 
   return (
     <>
@@ -19,6 +19,7 @@ function App() {
       <Home Img={Img}/>
       <Sobre />
       <Habilidades />
+      <Projetos />
     </>
   )
 }
