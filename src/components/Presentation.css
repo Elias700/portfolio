@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Protest+Revolution&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
 
 :root{
     --color: #E31C1C;
@@ -14,15 +15,18 @@
     align-items: center;
 }
 
-p{
+.p{
     font-family: "Protest Revolution", sans-serif;
     font-size: 1.6rem;
     cursor: pointer;
+    position: relative;
+    top: 30px;
 }
 
 strong{
     color: var(--color);
     cursor: pointer;
+    font-size: 2rem;
 }
 
 h2{
@@ -31,15 +35,19 @@ h2{
     cursor: pointer;
 }
 
-h1{
+.title{
     font-size: 13rem;
+    font-family: 'Rubik Scribble', system-ui, sans-serif;
     cursor: pointer;
+    font-weight: 100;
+    position: relative;
+    bottom: 50px;
 }
 
 img{
     width: 400px;
     position: relative;
-    bottom: 120px;
+    bottom: 160px;
     cursor: pointer;
 }
 
@@ -47,7 +55,7 @@ img{
     display: flex;
     gap: 20px;
     position: relative;
-    bottom: 130px;
+    bottom: 190px;
 }
 
 .btn1{
@@ -59,6 +67,7 @@ img{
     border: none;
     font-size: 1.4rem;
     transition: 0.5s;
+    border: 2px solid #000;
 }
 
 .btn2{
@@ -75,7 +84,7 @@ img{
 .btn1:hover{
     background: #fff;
     color: #000;
-    border: 2px solid #000;
+    
 }
 
 .btn2:hover{
@@ -85,7 +94,7 @@ img{
 
 .redes{
     position: relative;
-    bottom: 80px;
+    bottom: 140px;
     font-size: 1.3rem;
 }
 

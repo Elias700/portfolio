@@ -1,6 +1,8 @@
 
 import Home from "./components/Home"
-import Presentation from "./components/presentation"
+import Presentation from "./components/Presentation"
+import AboutMe from "./components/AboutMe"
+import Projects from "./components/Projects"
 
 function App() {
 
@@ -8,6 +10,8 @@ function App() {
     <>
      <Home />
      <Presentation />
+     <AboutMe />
+     <Projects />
     </>
   )
 }

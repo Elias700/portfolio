@@ -1,0 +1,13 @@
+
+.container3{
+    height: 50vh;
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.image1{
+    width: 200px;
+}
