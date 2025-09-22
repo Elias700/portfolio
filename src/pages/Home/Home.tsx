@@ -55,17 +55,7 @@ const Home = () => {
             
             {/* Bloco da imagem e SVG */}
             <div className="relative">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 200 200"
-                    className="absolute inset-0 z-0 h-100"
-                >
-                    <path
-                        fill="#24A148"
-                        d="M60.9,-45.7C74.3,-31.8,77.4,-6.7,69.7,11.5C62,29.7,43.6,41,25.9,46.9C8.2,52.7,-8.8,53.2,-18.1,45.6C-27.4,38.1,-29,22.5,-37.7,3.2C-46.4,-16.1,-62.2,-39.1,-57.1,-51.1C-52,-63.2,-26,-64.2,-1.1,-63.3C23.8,-62.4,47.5,-59.6,60.9,-45.7Z"
-                        transform="translate(100 100)"
-                    />
-                </svg>
+                
                 <img
                     src={image}
                     alt="Elias Ribeiro"
