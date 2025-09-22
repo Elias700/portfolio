@@ -26,7 +26,7 @@ export default function Navbar() {
         {isEnglish ? texts.en.title : texts.pt.title}
       </p>
 
-      <ul className="flex gap-5 [&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:hover:text-white [&>li]:transition [&>li]:duration-[1000ms] text-3xl">
+      <ul className="flex gap-15 [&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:hover:text-white [&>li]:transition [&>li]:duration-[1000ms] text-3xl">
         {(isEnglish ? texts.en.menu : texts.pt.menu).map((item, index) => (
           <li key={index}>{item}</li>
         ))}

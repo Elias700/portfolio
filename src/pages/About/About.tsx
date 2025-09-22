@@ -1,6 +1,6 @@
 
 //https://www.blobmaker.app/
-import image from '../../assets/elias.jfif'
+import image from '../../assets/elias.jpg'
 
 const About = () => {
     return (
