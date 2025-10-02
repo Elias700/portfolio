@@ -1,12 +1,3 @@
-import React from 'react';
-
-// Novo esquema de cores, traduzido para Tailwind:
-// 'cor-primaria': '#00B58C' (Green-Primary)
-// 'cor-secundaria': '#205251' (Green-Secondary)
-// 'fundo-escuro': '#20272F' (Dark-Background)
-// 'texto-claro': '#CBCCD1' (Light-Text)
-// 'cor-destaque': '#00BD95' (Green-Highlight)
-// 'sombra-escura': '#2E3138' (Dark-Shadow)
 
 const App = () => {
    

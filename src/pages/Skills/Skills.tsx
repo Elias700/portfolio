@@ -1,74 +1,89 @@
 import { DiHtml5, DiCss3, DiJsBadge, DiGit } from 'react-icons/di';
 import { SiTypescript, SiFigma, SiGithub, SiReact, SiTailwindcss } from 'react-icons/si';
-import { motion, type Variants } from 'framer-motion';
 
-// Variante para o contêiner principal
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1, // Atraso de 0.1s entre cada ícone
-    },
-  },
-};
+// Tipo ajustado
+type Icon = {
+  title: string,
+  description: string,
+  icon: any // Mudei de [] para any para aceitar o componente
+}
 
-// Variante que define o movimento de "onda" para cada ícone
-const itemVariants: Variants = {
-  hidden: { y: 20, opacity: 0 }, // Estado inicial, antes da animação
-  visible: {
-    y: [0, -20, 0], // Move para cima 20px e volta
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut",
-      repeat: Infinity,
-      repeatType: "mirror",
-    } as const, // AQUI está a correção para o TypeScript
+const icons: Icon[] = [
+  {
+    title: 'React', 
+    description: 'Construção de interfaces de usuário interativas e reativas com componentes reutilizáveis.', 
+    icon: SiReact // Apenas o nome da importação, sem parênteses ou aspas
   },
-};
+  {
+    title: 'TypeScript', 
+    description: 'Desenvolvimento de código robusto com tipagem estática avançada para maior segurança e manutenibilidade.', 
+    icon: SiTypescript
+  },
+  {
+    title: 'JavaScript', 
+    description: 'Linguagem de programação versátil para desenvolvimento web full-stack.', 
+    icon: DiJsBadge
+  },
+  {
+    title: 'Tailwind CSS', 
+    description: 'Framework CSS utilitário para criação de designs responsivos de forma eficiente.', 
+    icon: SiTailwindcss
+  },
+  {
+    title: 'HTML 5', 
+    description: 'Estruturação semântica e acessível de conteúdo para a web moderna.', 
+    icon: DiHtml5
+  },
+  {
+    title: 'CSS 3', 
+    description: 'Estilização avançada com animações, flexbox, grid e design responsivo.', 
+    icon: DiCss3
+  },
+  {
+    title: 'GitHub', 
+    description: 'Plataforma essencial para versionamento de código e trabalho em equipe.', 
+    icon: SiGithub
+  },
+  {
+    title: 'Git', 
+    description: 'Plataforma essencial para versionamento de código e trabalho em equipe.', 
+    icon: DiGit
+  },
+  {
+    title: 'Figma', 
+    description: 'Ferramenta de design e prototipagem para criar a interface do usuário.', 
+    icon: SiFigma
+  },
+];
 
 const Skills = () => {
   return (
-    <div className='bg-[#2E3138] h-[80vh] '>
-      <h1 className='mb-6 text-center text-4xl text-[#00B58C] p-12'>Skills</h1>
-      <motion.div
-        className='flex justify-center gap-10'
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <motion.div variants={itemVariants}>
-          <DiHtml5 size={70} color="#E34F26" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <DiCss3 size={70} color="#1572B6" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <DiJsBadge size={60} color="#F7DF1E" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <SiTypescript size={60} color="#3178C6" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <SiReact size={60} color="#61DAFB" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <SiTailwindcss size={60} color="#06B6D4" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <SiGithub size={60} />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <DiGit size={60} color="#F05032" />
-        </motion.div>
-        <motion.div variants={itemVariants}>
-          <SiFigma size={60} color="#F24E1E" />
-        </motion.div>
-      </motion.div>
-    </div>
+     <main className='h-[130vh] bg-[#2E3138] '>
+        <div className='p-5'>
+          <h2 className='text-center text-3xl text-[#00B58C]'>Habilidades</h2>
+          <h1 className='text-center text-7xl text-emerald-50'>Principais Habilidades</h1>
+        </div>
+          <div className='h-[50vh] flex flex-wrap justify-center gap-20 p-15'>
+          {icons.map((item) => (
+          <main key={item.title} className='bg-[#1d1f24] rounded-2xl transition hover:scale-[1.02]'>
+            <section className='flex flex-col items-center p-10 w-100 text-center cursor-pointer '>
+                <item.icon size={44} color="#00B58C"/> 
+                <h3 className="text-xl font-semibold text-[#eef4f2] p-5">{item.title}</h3>
+                <p className='text-[#aaafae] text-sm'>{item.description}</p>
+            </section>
+          </main>
+          ))}
+        </div> 
+     </main>
   );
 };
 
 export default Skills;
+
+
+
+
+
+
+
+ 

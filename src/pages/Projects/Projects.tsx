@@ -11,8 +11,11 @@ const Projects = () => {
   ];
 
   return (
-    <section className="h-[110vh] bg-[#2E3138] p-5">
-      <h1 className="mb-6 text-center text-4xl text-[#00B58C] p-12">Meus Projetos</h1>
+    <section className="h-[110vh] bg-[#2E3138]">
+        <div className="p-12">
+          <h2 className='text-center text-3xl text-[#00B58C]'>Projetos</h2>
+        <h1 className='text-center text-7xl text-emerald-50'>Meus Projetos Principais</h1>
+        </div>
       <div className="flex justify-center flex-wrap p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 cursor-pointer">
           {projects.map((project) => (
