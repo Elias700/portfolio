@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 
 const Skills = () => {
   return (
-    <div className='bg-[#2E3138] h-[50vh]'>
+    <div className='bg-[#2E3138] h-[80vh] '>
       <h1 className='mb-6 text-center text-4xl text-[#00B58C] p-12'>Skills</h1>
       <motion.div
         className='flex justify-center gap-10'

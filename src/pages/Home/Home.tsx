@@ -46,11 +46,18 @@ const Home = () => {
                 </motion.p>
 
                 <div className="flex gap-5 py-5">
-                    <FaGithubSquare className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
-                    <MdEmail className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
-                    <FaLinkedin className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                    <a href="https://github.com/Elias700?tab=overview&from=2025-09-01&to=2025-09-24" target="blanck">
+                        <FaGithubSquare className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                    </a>
+                    
+                    <a href="">
+                        <MdEmail className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/elias-ribeiro700/" target="blanck">
+                        <FaLinkedin className="text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                    </a>
                 </div>
-                <button className="bg-[#00B58C] py-4 px-15 text-3xl text-[#CBCCD1] rounded-[5px] cursor-pointer hover:bg-[#28816c] transition duration-[700ms] hover:text-[#f1f1f5]">Curriculo</button>
+                <button className="bg-[#00B58C] py-4 px-15 text-3xl text-[#CBCCD1] rounded-[5px] cursor-pointer hover:bg-[#28816c] transition duration-[700ms] hover:text-[#f1f1f5]"><a href="file:///C:/Users/elias/Downloads/Curriculo_EliasRibeiro%20(1).pdf" ></a>Curriculo</button>
             </motion.div>
             
             {/* Bloco da imagem e SVG */}

@@ -1,41 +1,24 @@
-import { useState } from "react";
-import { MdLanguage } from "react-icons/md";
+import { FaGlobe } from 'react-icons/fa';
+import { useState } from 'react';
+
 
 export default function Navbar() {
-  // Estado para controlar o idioma
-  const [isEnglish, setIsEnglish] = useState(false);
 
-  // Objetos com textos nos dois idiomas
-  const texts = {
-    pt: {
-      title: "Portfólio",
-      menu: ["Home", "Sobre mim", "Projetos", "Contato"]
-    },
-    en: {
-      title: "Portfolio",
-      menu: ["Home", "About Me", "Projects", "Contact"]
-    }
-  };
-
-  // Função para alternar o idioma
-  const toggleLanguage = () => setIsEnglish(prev => !prev);
+  const [lenguage, setLenguage] = useState<string>('');
 
   return (
-    <nav className="flex justify-between p-10 bg-green-950">
-      <p className="text-[#00B58C] text-3xl font-light">
-        {isEnglish ? texts.en.title : texts.pt.title}
-      </p>
-
-      <ul className="flex gap-15 [&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:hover:text-white [&>li]:transition [&>li]:duration-[1000ms] text-3xl">
-        {(isEnglish ? texts.en.menu : texts.pt.menu).map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-
-      <MdLanguage
-        className="text-3xl text-[#00B58C] cursor-pointer"
-        onClick={toggleLanguage} // alterna o idioma ao clicar
-      />
-    </nav>
+   <header className="bg-green-950 p-10 flex justify-between">
+      <p className='text-[#00B58C] text-2xl **font-dancing** italic'>Elias Ribeiro</p>
+      <nav className='flex justify-center'>
+        <ul className='[&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:text-2xl [&>li]:hover:text-[#CBCCD1] [&>li]:transition [&>li]:duration-[500ms] flex justify-center gap-10'>
+          <li>Home</li>
+          <li>Sobre mim</li>
+          <li>Meus projetos</li>
+          <li>Habilidades</li>
+          <li>Contato</li>
+        </ul>
+      </nav>
+        <FaGlobe size={30} color="#00B58C" className='cursor-pointer '/>
+   </header>
   );
 }
