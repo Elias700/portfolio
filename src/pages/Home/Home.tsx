@@ -59,31 +59,13 @@ const Home = () => {
                 </div>
                 
                 <button
-                className="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-[#00B58C] rounded-md group cursor-pointer"
-                >
-                    <span
-                        className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#085140] rounded group-hover:-mr-4 group-hover:-mt-4"
+                        className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-[#00B58C] cursor-pointer w-60"
                     >
-                        <span
-                        className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
-                        ></span>
-                    </span>
-                    <span
-                        className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#085140] rounded group-hover:-ml-4 group-hover:-mb-4"
-                    >
-                    <span
-                        className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
-                    ></span>
-                    </span>
-                    <span
-                        className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-[#085140] rounded-md group-hover:translate-x-0"
-                    ></span>
-                    <span
-                    className="relative w-full text-left text-white transition-colors p-2 duration-200 ease-in-out group-hover:text-white"
-                    >Curriculo
-                    </span>
-                
-                </button>
+                        <span className="text-lg">Contato</span>
+                        <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                            <div className="relative h-full w-10 bg-[#00B58C]"></div>
+                        </div>
+                    </button>
 
             </motion.div>
             
