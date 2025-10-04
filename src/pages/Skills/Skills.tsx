@@ -1,89 +1,93 @@
 import { DiHtml5, DiCss3, DiJsBadge, DiGit } from 'react-icons/di';
 import { SiTypescript, SiFigma, SiGithub, SiReact, SiTailwindcss } from 'react-icons/si';
+import LearningSkills from './LearningSkills';
 
 // Tipo ajustado
-type Icon = {
+type Skills = {
   title: string,
   description: string,
   icon: any // Mudei de [] para any para aceitar o componente
 }
 
-const icons: Icon[] = [
+const icons: Skills[] = [
   {
     title: 'React', 
-    description: 'Construção de interfaces de usuário interativas e reativas com componentes reutilizáveis.', 
+    description: 'Construção de interfaces de usuário interativas e reativas com componentes reutilizáveis. Utiliza o Virtual DOM e arquitetura baseada em componentes.', 
     icon: SiReact // Apenas o nome da importação, sem parênteses ou aspas
   },
   {
     title: 'TypeScript', 
-    description: 'Desenvolvimento de código robusto com tipagem estática avançada para maior segurança e manutenibilidade.', 
+    description: 'Superset do JavaScript que adiciona tipagem estática e recursos avançados, tornando o código mais seguro, escalável e fácil de manter.', 
     icon: SiTypescript
   },
   {
     title: 'JavaScript', 
-    description: 'Linguagem de programação versátil para desenvolvimento web full-stack.', 
+    description: 'Linguagem de programação que dá interatividade e dinamismo às páginas web. É a base do desenvolvimento front-end moderno e também usada no back-end com Node.js.', 
     icon: DiJsBadge
   },
   {
     title: 'Tailwind CSS', 
-    description: 'Framework CSS utilitário para criação de designs responsivos de forma eficiente.', 
+    description: 'O Tailwind CSS é um framework utilitário-first que fornece classes prontas para estilização, permitindo montar layouts direto no HTML sem escrever muito CSS customizado.', 
     icon: SiTailwindcss
   },
   {
     title: 'HTML 5', 
-    description: 'Estruturação semântica e acessível de conteúdo para a web moderna.', 
+    description: 'A linguagem de marcação padrão da web, responsável por estruturar o conteúdo de páginas, como títulos, parágrafos, links, imagens e formulários.', 
     icon: DiHtml5
   },
   {
     title: 'CSS 3', 
-    description: 'Estilização avançada com animações, flexbox, grid e design responsivo.', 
+    description: 'Linguagem usada para estilizar páginas web, controlando cores, fontes, espaçamentos e layouts, tornando os sites mais atraentes e responsivos.', 
     icon: DiCss3
   },
   {
     title: 'GitHub', 
-    description: 'Plataforma essencial para versionamento de código e trabalho em equipe.', 
+    description: 'Plataforma que hospeda repositórios Git e oferece recursos de colaboração, versionamento e integração, sendo essencial para projetos open-source e trabalho em equipe.', 
     icon: SiGithub
   },
   {
     title: 'Git', 
-    description: 'Plataforma essencial para versionamento de código e trabalho em equipe.', 
+    description: 'Sistema de controle de versão distribuído, que permite acompanhar mudanças no código, trabalhar em equipe e gerenciar diferentes versões de um projeto.', 
     icon: DiGit
   },
   {
     title: 'Figma', 
-    description: 'Ferramenta de design e prototipagem para criar a interface do usuário.', 
+    description: 'Ferramenta de design de interfaces colaborativa e online, muito usada para prototipação, criação de layouts e integração entre designers e desenvolvedores.', 
     icon: SiFigma
   },
 ];
 
 const Skills = () => {
   return (
-     <main className='h-[130vh] bg-[#2E3138] '>
+    <>
+      <main className='min-h-[100vh] bg-[#2E3138]'>
         <div className='p-5'>
           <h2 className='text-center text-3xl text-[#00B58C]'>Habilidades</h2>
           <h1 className='text-center text-7xl text-emerald-50'>Principais Habilidades</h1>
         </div>
-          <div className='h-[50vh] flex flex-wrap justify-center gap-20 p-15'>
+        <div className='flex flex-wrap justify-center gap-20 p-15'>
           {icons.map((item) => (
-          <main key={item.title} className='bg-[#1d1f24] rounded-2xl transition hover:scale-[1.02]'>
-            <section className='flex flex-col items-center p-10 w-100 text-center cursor-pointer '>
-                <item.icon size={44} color="#00B58C"/> 
+            <main key={item.title} className='bg-[#1d1f24] hover:shadow-2xl hover:shadow-[#00B58C] rounded-2xl transition hover:scale-[1.02]'>
+              <section className='flex flex-col items-center p-10 w-100 text-center cursor-pointer '>
+                <item.icon size={44} color="#00B58C"/>
                 <h3 className="text-xl font-semibold text-[#eef4f2] p-5">{item.title}</h3>
                 <p className='text-[#aaafae] text-sm'>{item.description}</p>
-            </section>
-          </main>
+              </section>
+            </main>
           ))}
-        </div> 
-     </main>
+        </div>
+      </main>
+
+      {/* Section spacing between Skills and LearningSkills */}
+      <div className='bg-[#2E3138]'>
+        <div className='h-10'></div>
+        <LearningSkills />
+        <div className='h-10'></div>
+      </div>
+    </>
   );
 };
 
 export default Skills;
-
-
-
-
-
-
 
  

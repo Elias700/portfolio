@@ -84,12 +84,15 @@ const App = () => {
                         </label>
                     </div>
 
-                    <button
-                        className="w-full py-3 px-4 bg-[#00B58C] hover:bg-[#146a56] hover:text-[#e5ebe8] rounded-lg shadow-lg text-[#20272F] font-semibold transition duration-300 transform hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
-                        type="submit"
-                    >
-                        Enviar Mensagem
+                     <div className="flex justify-center">
+                        <button 
+                        className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-[#00B58C] backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl hover:shadow-[#00B58C] border border-[#0f745c] cursor-pointer w-60">
+                        <span className="text-lg">Enviar mensagem</span>
+                        <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                        <div className="relative h-full w-10 bg-[#fff]"></div>
+                        </div>
                     </button>
+                     </div>
                 </form>
 
             </div>
@@ -98,3 +101,6 @@ const App = () => {
 };
 
 export default App;
+
+
+// gray-800/30

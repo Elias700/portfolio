@@ -1,43 +1,56 @@
 import image from '../../assets/elias.jpg'
+import { motion } from "framer-motion";
 
 const About = () => {
-    return (
-        <div className={`bg-[#20272F] h-[90vh]`}> 
-            <div className='p-10'>
-                <h2 className={`text-center text-3xl text-[#00B58C]`}>
-                    Sobre
-                </h2>
-                <h1 className={`text-center text-7xl text-emerald-50`}>
-                    Um pouco sobre mim
-                </h1>
+  return (
+    <div className={`bg-[#20272F] h-[90vh]`}>
+      <div className='p-10'>
+        <h2 className={`text-center text-3xl text-[#00B58C]`}>Sobre</h2>
+        <h1 className={`text-center text-7xl text-emerald-50`}>Um pouco sobre mim</h1>
+      </div>
+
+      <section className="flex flex-col md:flex-row justify-center items-center gap-50 px-4 ">
+        <div className='max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10'>
+          <p className={`bg-transparent text-[#00B58C] text-lg text-center`}>
+            Sou formado em Licenciatura em Pedagogia e, atualmente, curso Análise e Desenvolvimento de Sistemas na Fundação Visconde de Cairu. Estou em processo de transição de carreira, tendo encontrado na programação uma verdadeira paixão.
+            Gosto de transformar ideias em código e de dar vida a projetos que unem lógica, criatividade e funcionalidade. Desenvolver soluções, criar interfaces e aprender novas tecnologias me motiva diariamente, trazendo realização pessoal e profissional.
+          </p>
+
+          <button 
+            className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl hover:shadow-[#00B58C] border border-[#0f745c] cursor-pointer w-60">
+            <span className="text-lg">Contato</span>
+            <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+              <div className="relative h-full w-10 bg-[#00B58C]"></div>
             </div>
-            <section className="flex flex-col md:flex-row justify-center items-center gap-50 px-4 ">
-                <div className='max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10'>
-                    <p className={`bg-transparent text-[#00B58C] text-lg text-center`}>
-                        Minha trajetória profissional é uma fusão estratégica entre Pedagogia e Tecnologia.
-
-                        Formado em Licenciatura em Pedagogia, adquiri uma base sólida em lógica, comunicação e foco na experiência do usuário, habilidades que hoje aplico diretamente na construção de soluções digitais.
-
-                        Atualmente, sou Desenvolvedor Frontend e estou consolidando uma transição de carreira na graduação em Análise e Desenvolvimento de Sistemas pela Fundação Visconde de Cairu.
-
-                        Tenho domínio das ferramentas essenciais do frontend: HTML, CSS, JavaScript, TypeScript, ReactJs e Figma.
-
-                        Sou um profissional adaptável, voltado à resolução de problemas e empenhado em transformar ideias em interfaces funcionais e intuitivas.
-                    </p>
-                    <button
-                        className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-[#00B58C] cursor-pointer w-60"
-                    >
-                        <span className="text-lg">Contato</span>
-                        <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-                            <div className="relative h-full w-10 bg-[#00B58C]"></div>
-                        </div>
-                    </button>
-                </div>
-                <img src={image} alt="Elias Riberio" className='h-120 rounded-lg '/>
-            </section>
-            
+          </button>
         </div>
-    )
+
+        {/* Imagem: fade-in + sobe/desce sem delay + hover glow */}
+        <motion.img
+          src={image}
+          alt="Elias Ribeiro"
+          className='h-120 rounded-lg hover:cursor-pointer'
+          initial={{ opacity: 0, y: 20 }} // começa levemente abaixo e invisível
+          animate={{ opacity: 1, y: [0, -12] }} // anima opacidade e faz keyframes y (vai e volta)
+          transition={{
+            opacity: { duration: 0.9, ease: "easeOut" }, // fade-in rápido
+            y: {
+              duration: 2.2,
+              ease: "linear",           // ESSENCIAL: linear remove o slowdown nas extremidades
+              repeat: Infinity,
+              repeatType: "reverse",    // inverte a animação (vai e volta)
+              repeatDelay: 0            // garante que não haja pausa entre ciclos
+            }
+          }}
+          whileHover={{
+            scale: 1.03,
+            boxShadow: "0 18px 40px rgba(0,181,140,0.18)"
+          }}
+          style={{ willChange: "transform, opacity" }} // ajuda o navegador a otimizar
+        />
+      </section>
+    </div>
+  );
 };
 
 export default About;
