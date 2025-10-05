@@ -62,14 +62,14 @@ const Skills = () => {
   const { t } = useTranslation();
   return (
     <>
-      <main className='min-h-[100vh] bg-[#2E3138]'>
+      <main className='min-h-[100vh]' style={{ backgroundColor: 'var(--section-bg)' }}>
         <div className='p-5'>
           <h2 className='text-center text-3xl text-[#00B58C]'>{t('skills.title')}</h2>
           <h1 className='text-center text-7xl text-emerald-50'>{t('skills.subtitle')}</h1>
         </div>
         <div className='flex flex-wrap justify-center gap-20 p-15'>
           {icons.map((item) => (
-            <main key={item.title} className='bg-[#1d1f24] hover:shadow-2xl hover:shadow-[#00B58C] rounded-2xl transition hover:scale-[1.02]'>
+            <main key={item.title} className='hover:shadow-2xl hover:shadow-[#00B58C] rounded-2xl transition hover:scale-[1.02]' style={{ backgroundColor: 'var(--card-bg)' }}>
               <section className='flex flex-col items-center p-10 w-100 text-center cursor-pointer '>
                 <item.icon size={44} color="#00B58C"/>
                 <h3 className="text-xl font-semibold text-[#eef4f2] p-5">{item.title}</h3>
@@ -81,7 +81,7 @@ const Skills = () => {
       </main>
 
       {/* Section spacing between Skills and LearningSkills */}
-      <div className='bg-[#2E3138]'>
+      <div style={{ backgroundColor: 'var(--section-bg)' }}>
         <div className='h-10'></div>
         <LearningSkills />
         <div className='h-10'></div>

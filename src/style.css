@@ -5,11 +5,27 @@
 :root {
   /* Adjust if your header height changes */
   --header-height: 96px;
+  /* Dark (default) */
+  --body-bg: #20272F;
+  --header-bg: #20272F;
+  --section-bg: #2E3138;
+  --card-bg: #1d1f24;
+  --text-primary: #eef4f2;
+  --text-muted: #aaafae;
+}
+
+[data-theme="light"] {
+  --body-bg: #f5f7fb;
+  --header-bg: #ffffff;
+  --section-bg: #f0f3f8;
+  --card-bg: #ffffff;
+  --text-primary: #1f2937;
+  --text-muted: #475569;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #20272F;
+  background-color: var(--body-bg);
 }
 
 /* Prevent content from being hidden behind fixed header */

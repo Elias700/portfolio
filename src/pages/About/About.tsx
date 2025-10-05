@@ -5,7 +5,7 @@ import { useTranslation } from '../../i18n/LanguageContext.tsx';
 const About = () => {
   const { t } = useTranslation();
   return (
-    <div className={`bg-[#20272F] h-[90vh]`}>
+    <div className={`h-[90vh]`} style={{ backgroundColor: 'var(--section-bg)' }}>
       <div className='p-10'>
         <h2 className={`text-center text-3xl text-[#00B58C]`}>{t('about.title')}</h2>
         <h1 className={`text-center text-7xl text-emerald-50`}>{t('about.subtitle')}</h1>

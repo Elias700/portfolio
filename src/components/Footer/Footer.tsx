@@ -15,7 +15,7 @@ const Footer = () => {
         <footer className={`w-full bg-[${bgColor}] pt-8 pb-4`}>
 
             <h1 className="text-center text-3xl font-semibold mb-6 text-[#00B58C]">
-                &lt;/&gt; Elias Ribeiro
+                &lt;Dev Elias/&gt;
             </h1>
 
 

@@ -13,7 +13,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="h-[110vh] bg-[#2E3138]">
+    <section className="h-[110vh]" style={{ backgroundColor: 'var(--section-bg)' }}>
         <div className="p-12">
           <h2 className='text-center text-3xl text-[#00B58C]'>{t('projects.title')}</h2>
         <h1 className='text-center text-7xl text-emerald-50'>{t('projects.subtitle')}</h1>
