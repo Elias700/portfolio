@@ -4,8 +4,10 @@ import { MdEmail } from "react-icons/md";
 import image from "../../assets/eliass.png"
 import imageBackground from '../../assets/blurry-gradient-haikei.png';
 import { motion } from "framer-motion";
+import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const Home = () => {
+    const { t } = useTranslation();
     // Definindo as variantes para as animações de texto
     const textVariants = {
         hidden: { opacity: 0, x: -50 }, // Estado inicial, invisível e deslocado para a esquerda
@@ -35,14 +37,14 @@ const Home = () => {
                 variants={containerVariants}
             >
                 <motion.p className="text-4xl text-[#CBCCD1]" variants={textVariants}>
-                    <strong className="text-5xl text-[#CBCCD1]">Olá!</strong>
-                    Me chamo
+                    <strong className="text-5xl text-[#CBCCD1]">{t('home.hello')}</strong>
+                    {" "}{t('home.myNameIs')}
                 </motion.p>
                 <motion.h2 className="text-7xl bg-gradient-to-bl from-[#6EE7B7] via-[#3FAE8B] to-[#0F766E] bg-clip-text text-transparent" variants={textVariants}>
                     Elias Ribeiro
                 </motion.h2>
                 <motion.p className="text-4xl text-[#CBCCD1]" variants={textVariants}>
-                    Desenvolvedor <strong className="text-[#CBCCD1]">Front-end</strong>
+                    {t('home.role')}
                 </motion.p>
 
                 <div className="flex gap-5 py-5">
@@ -59,13 +61,15 @@ const Home = () => {
                 </div>
                 
                 <button
-                        className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-[#00B58C] cursor-pointer w-60"
-                    >
-                        <span className="text-lg">Contato</span>
+                    className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-[#00B58C] cursor-pointer w-60"
+                >
+                      <a href="file:///C:/Users/elias/Downloads/Curriculo_EliasRibeiro%20(1).pdf" target="blanck">
+                          <span className="text-lg">{t('home.resume')}</span>
                         <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
                             <div className="relative h-full w-10 bg-[#00B58C]"></div>
                         </div>
-                    </button>
+                      </a>
+                </button>
 
             </motion.div>
             

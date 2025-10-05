@@ -3,8 +3,10 @@ import {
     FaPhone, FaMapMarkerAlt, FaEnvelope,
     FaLinkedinIn, FaGithub
 } from 'react-icons/fa';
+import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const Footer = () => {
+    const { t } = useTranslation();
     const bgColor = '#2E3138'; 
     const itemColor = 'text-gray-700'; 
     const iconSize = 18; 
@@ -13,7 +15,7 @@ const Footer = () => {
         <footer className={`w-full bg-[${bgColor}] pt-8 pb-4`}>
 
             <h1 className="text-center text-3xl font-semibold mb-6 text-[#00B58C]">
-                &lt;/&gt; Elias Riberio
+                &lt;/&gt; Elias Ribeiro
             </h1>
 
 
@@ -78,9 +80,7 @@ const Footer = () => {
             </div>
 
             <div className="mt-8 pt-4 border-t border-[#00B58C] text-center">
-                <p className="text-gray-500 text-sm">
-                    © Elias Ribeiro 2025. Todos os direitos reservados.
-                </p>
+                <p className="text-gray-500 text-sm">{t('footer.rights')}</p>
             </div>
         </footer>
     );

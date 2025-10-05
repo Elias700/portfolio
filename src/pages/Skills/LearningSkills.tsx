@@ -1,6 +1,8 @@
 import { DiMysql, DiJava, DiLinux } from "react-icons/di";
+import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const LearningSkills = () => {
+    const { t } = useTranslation();
 
     type Skills = {
         title: string,
@@ -9,16 +11,16 @@ const LearningSkills = () => {
     };
 
     const skills: Skills[] = [
-        {title: 'MySQL Workbench', description: 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados. Ele permite criar e gerenciar esquemas, executar consultas SQL e visualizar relações entre tabelas de forma intuitiva.', icon: DiMysql},
-        {title: 'Java', description: 'Java é uma linguagem de programação robusta e orientada a objetos, amplamente utilizada no desenvolvimento de aplicações web, desktop e mobile. Sua principal característica é a portabilidade.', icon: DiJava},
-        {title: 'Linux', description: 'O Linux é um sistema operacional de código aberto conhecido por sua estabilidade, segurança e flexibilidade. É amplamente utilizado em servidores, desenvolvimento de software e ambientes de programação, sendo uma das bases mais importantes do ecossistema tecnológico atual.', icon: DiLinux}
+        {title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql},
+        {title: 'Java', description: t('learning.java.desc'), icon: DiJava},
+        {title: 'Linux', description: t('learning.linux.desc'), icon: DiLinux}
     ];
 
     return (
         <main className='mt-24'>
             <div className='p-5'>
-                <h2 className='text-center text-3xl text-[#00B58C]'>Habilidades</h2>
-                <h1 className='text-center text-7xl text-emerald-50'>Habilidades em aprendizado</h1>
+                <h2 className='text-center text-3xl text-[#00B58C]'>{t('learning.title')}</h2>
+                <h1 className='text-center text-7xl text-emerald-50'>{t('learning.subtitle')}</h1>
             </div>
             <section className='h-[50vh] flex flex-wrap justify-center gap-20 p-15'>
                 {skills.map((skill) => (

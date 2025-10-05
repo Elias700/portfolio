@@ -1,24 +1,25 @@
 import image from '../../assets/elias.jpg'
 import { motion } from "framer-motion";
+import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <div className={`bg-[#20272F] h-[90vh]`}>
       <div className='p-10'>
-        <h2 className={`text-center text-3xl text-[#00B58C]`}>Sobre</h2>
-        <h1 className={`text-center text-7xl text-emerald-50`}>Um pouco sobre mim</h1>
+        <h2 className={`text-center text-3xl text-[#00B58C]`}>{t('about.title')}</h2>
+        <h1 className={`text-center text-7xl text-emerald-50`}>{t('about.subtitle')}</h1>
       </div>
 
       <section className="flex flex-col md:flex-row justify-center items-center gap-50 px-4 ">
         <div className='max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10'>
           <p className={`bg-transparent text-[#00B58C] text-lg text-center`}>
-            Sou formado em Licenciatura em Pedagogia e, atualmente, curso Análise e Desenvolvimento de Sistemas na Fundação Visconde de Cairu. Estou em processo de transição de carreira, tendo encontrado na programação uma verdadeira paixão.
-            Gosto de transformar ideias em código e de dar vida a projetos que unem lógica, criatividade e funcionalidade. Desenvolver soluções, criar interfaces e aprender novas tecnologias me motiva diariamente, trazendo realização pessoal e profissional.
+            {t('about.paragraph')}
           </p>
 
           <button 
             className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl hover:shadow-[#00B58C] border border-[#0f745c] cursor-pointer w-60">
-            <span className="text-lg">Contato</span>
+            <span className="text-lg">{t('about.button')}</span>
             <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
               <div className="relative h-full w-10 bg-[#00B58C]"></div>
             </div>

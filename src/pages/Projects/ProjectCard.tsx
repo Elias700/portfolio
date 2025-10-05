@@ -5,7 +5,10 @@ type ProjectProps = {
   imageUrl: string;
 };
 
+import { useTranslation } from '../../i18n/LanguageContext.tsx';
+
 const ProjectCard = ({ name, description, imageUrl }: ProjectProps) => {
+  const { t } = useTranslation();
   return (
     <div className="relative flex w-80 flex-col rounded-xl bg-gradient-to-br from-[#2E3138] to-[#205251] bg-clip-border text-gray-700 shadow-md transition hover:scale-[1.02]">
       <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-green-gray-500 bg-clip-border text-white shadow-lg shadow-green-gray-500/40 ">
@@ -25,10 +28,10 @@ const ProjectCard = ({ name, description, imageUrl }: ProjectProps) => {
       </div>
       <div className="p-6 pt-0 flex gap-20 ">
         <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-[#00B58C] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer">
-          Deploy
+          {t('projects.deploy')}
         </button>
         <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-[#00B58C] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none cursor-pointer">
-          Github
+          {t('projects.github')}
         </button>
       </div>
     </div>
