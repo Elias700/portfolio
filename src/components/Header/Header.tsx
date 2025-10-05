@@ -1,5 +1,5 @@
 import { FaGlobe } from 'react-icons/fa';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
@@ -10,6 +10,7 @@ export default function Header() {
     const stored = localStorage.getItem('theme');
     return stored === 'light' || stored === 'dark' ? (stored as 'dark' | 'light') : 'dark';
   });
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -17,30 +18,18 @@ export default function Header() {
   }, [theme]);
 
   const toggleMenu = () => setOpen((v) => !v);
+  const toggleMobile = () => setMobileOpen((v) => !v);
   const choose = (code: 'pt' | 'en') => {
     setLang(code);
     setOpen(false);
   };
-
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between w-full px-10 py-4"
-      style={{ backgroundColor: 'var(--header-bg)' }}
-    >
-      {/* Logo / Nome */}
-      <p className="text-2xl italic font-dancing text-[#00B58C]">
-        &lt;Dev Elias/&gt;
-      </p>
+    <header className="px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50" style={{ backgroundColor: 'var(--header-bg)' }}>
+      <p className='text-[#00B58C] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
 
-      {/* Navegação */}
-      <nav className="flex items-center justify-center bg-[#1C1E22] rounded-lg">
-        <ul
-          className="flex justify-center gap-10 h-full
-                     [&>li]:flex [&>li]:items-center [&>li]:px-6 [&>li]:py-3
-                     [&>li]:text-2xl [&>li]:text-[#00B58C] [&>li]:cursor-pointer
-                     [&>li]:transition-all [&>li]:duration-500
-                     [&>li]:hover:bg-[#2E3138] [&>li]:hover:text-[#CBCCD1]"
-        >
+      {/* Navegação (visual simples original, responsiva) */}
+      <nav className='hidden md:flex justify-center'>
+        <ul className='flex justify-center gap-8 lg:gap-10 [&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:text-xl lg:[&>li]:text-2xl [&>li]:hover:text-[#CBCCD1] [&>li]:transition [&>li]:duration-[500ms]'>
           <li><a href="#home">{t('nav.home')}</a></li>
           <li><a href="#about">{t('nav.about')}</a></li>
           <li><a href="#projects">{t('nav.projects')}</a></li>
@@ -49,11 +38,10 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Ícones */}
-      <div className="relative flex items-center gap-5">
+      <div className="relative flex items-center gap-4 md:gap-5">
         <div className="relative">
           <FaGlobe
-            size={28}
+            size={24}
             className="text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1]"
             onClick={toggleMenu}
           />
@@ -82,7 +70,7 @@ export default function Header() {
         </div>
 
         <FiSun
-          size={28}
+          size={24}
           title="Light"
           onClick={() => setTheme('light')}
           className={`text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1] ${
@@ -91,14 +79,36 @@ export default function Header() {
         />
 
         <FiMoon
-          size={28}
+          size={24}
           title="Dark"
           onClick={() => setTheme('dark')}
           className={`text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1] ${
             theme === 'dark' ? 'ring-1 ring-[#00B58C] rounded-full' : ''
           }`}
         />
+
+        {/* Botão Hamburger - visível em mobile/tablet */}
+        <button
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          className="md:hidden text-[#00B58C] hover:text-[#CBCCD1] transition duration-500"
+          onClick={toggleMobile}
+        >
+          {mobileOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+        </button>
       </div>
+
+      {/* Menu Mobile/Tablet (overlay) */}
+      {mobileOpen && (
+        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40" style={{ backgroundColor: 'var(--header-bg)' }}>
+          <ul className="flex flex-col gap-2 p-4">
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#home">{t('nav.home')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#about">{t('nav.about')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#projects">{t('nav.projects')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#skills">{t('nav.skills')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#contact">{t('nav.contact')}</a></li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
