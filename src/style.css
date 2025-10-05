@@ -2,6 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&family=Protest+Revolution&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+  /* Adjust if your header height changes */
+  --header-height: 96px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #20272F;
+}
+
+/* Prevent content from being hidden behind fixed header */
+body {
+  padding-top: var(--header-height);
+}
+
+/* Make anchor scrolling stop below the fixed header */
+main > div[id] {
+  scroll-margin-top: var(--header-height);
+}
+
 /* Global font mapping */
 h1 {
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
