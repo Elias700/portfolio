@@ -24,18 +24,36 @@ export default function Header() {
     setOpen(false);
   };
   return (
-    <header className="px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50" style={{ backgroundColor: 'var(--header-bg)' }}>
+    <header className="px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50" style={{ backgroundColor: 'var(--header-bg)', height: '10vh'}}>
       <p className='text-[#00B58C] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
 
-      {/* Navegação (visual simples original, responsiva) */}
       <nav className='hidden md:flex justify-center'>
-        <ul className='flex justify-center gap-8 lg:gap-10 [&>li]:text-[#00B58C] [&>li]:cursor-pointer [&>li]:text-xl lg:[&>li]:text-2xl [&>li]:hover:text-[#CBCCD1] [&>li]:transition [&>li]:duration-[500ms]'>
-          <li><a href="#home">{t('nav.home')}</a></li>
-          <li><a href="#about">{t('nav.about')}</a></li>
-          <li><a href="#projects">{t('nav.projects')}</a></li>
-          <li><a href="#skills">{t('nav.skills')}</a></li>
-          <li><a href="#contact">{t('nav.contact')}</a></li>
-        </ul>
+        <ul 
+            className='flex justify-center gap-8 lg:gap-10 
+            [&>li]:relative 
+            [&>li]:text-[#00B58C] 
+            [&>li]:cursor-pointer 
+            [&>li]:text-xl lg:[&>li]:text-2xl 
+            [&>li]:transition-all 
+            [&>li]:duration-500 
+            [&>li]:hover:text-[#CBCCD1] 
+            [&>li]:after:content-[""] 
+            [&>li]:after:absolute 
+            [&>li]:after:left-0 
+            [&>li]:after:-bottom-1 
+            [&>li]:after:h-[2px] 
+            [&>li]:after:w-0 
+            [&>li]:after:bg-[#CBCCD1] 
+            [&>li]:hover:after:w-full 
+            [&>li]:after:transition-all 
+            [&>li]:after:duration-500'
+          >
+            <li><a href="#home">{t('nav.home')}</a></li>
+            <li><a href="#about">{t('nav.about')}</a></li>
+            <li><a href="#projects">{t('nav.projects')}</a></li>
+            <li><a href="#skills">{t('nav.skills')}</a></li>
+            <li><a href="#contact">{t('nav.contact')}</a></li>
+          </ul>
       </nav>
 
       <div className="relative flex items-center gap-4 md:gap-5">
@@ -99,7 +117,7 @@ export default function Header() {
 
       {/* Menu Mobile/Tablet (overlay) */}
       {mobileOpen && (
-        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40" style={{ backgroundColor: 'var(--header-bg)' }}>
+        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40" >
           <ul className="flex flex-col gap-2 p-4">
             <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#home">{t('nav.home')}</a></li>
             <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#about">{t('nav.about')}</a></li>

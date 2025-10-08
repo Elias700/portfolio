@@ -3,24 +3,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  /* Adjust if your header height changes */
+  /* Header height */
   --header-height: 96px;
-  /* Dark (default) */
+
+  /* === Core Colors (Dark Theme) === */
   --body-bg: #20272F;
   --header-bg: #20272F;
   --section-bg: #2E3138;
   --card-bg: #1d1f24;
-  --text-primary: #eef4f2;
-  --text-muted: #aaafae;
+  --text-primary: #EEF4F2;
+  --text-muted: #AAAFae;
+
+  /* === Primary Brand Palette (based on #00B58C) === */
+  --primary-50: #E6FFF7;   /* bem claro */
+  --primary-100: #B3FFE3;  /* claro */
+  --primary-200: #80FFD0;  /* suave */
+  --primary-300: #4DFFBC;  /* médio */
+  --primary-400: #1AFFA8;  /* vívido */
+  --primary-500: #00B58C;  /* cor principal */
+  --primary-600: #009473;  /* mais escuro */
+  --primary-700: #00735A;  /* profundo */
+  --primary-800: #005242;  /* quase escuro */
+  --primary-900: #00312A;  /* muito escuro */
+
+  /* === Accent and States === */
+  --accent: var(--primary-400);
+  --success: #00B58C;
+  --warning: #FFD56A;
+  --error: #FF6B6B;
 }
 
 [data-theme="light"] {
-  --body-bg: #f5f7fb;
-  --header-bg: #ffffff;
-  --section-bg: #f0f3f8;
-  --card-bg: #ffffff;
-  --text-primary: #1f2937;
+  /* === Light Theme Variants === */
+  --body-bg: #F5F7FB;
+  --header-bg: #FFFFFF;
+  --section-bg: #F0F3F8;
+  --card-bg: #FFFFFF;
+  --text-primary: #1F2937;
   --text-muted: #475569;
+
+  /* Adjusted brand tones for visibility in light mode */
+  --primary-50: #E9FFF8;
+  --primary-100: #BDFEE7;
+  --primary-200: #91FCD7;
+  --primary-300: #65FAC6;
+  --primary-400: #39F8B6;
+  --primary-500: #00B58C; /* Principal */
+  --primary-600: #009475;
+  --primary-700: #00735E;
+  --primary-800: #005247;
+  --primary-900: #003130;
+
+  --accent: var(--primary-400);
+  --success: #00B58C;
+  --warning: #EFB750;
+  --error: #E45C5C;
 }
 
 html {
@@ -28,17 +65,16 @@ html {
   background-color: var(--body-bg);
 }
 
-/* Prevent content from being hidden behind fixed header */
 body {
   padding-top: var(--header-height);
+  color: var(--text-primary);
+  background-color: var(--body-bg);
 }
 
-/* Make anchor scrolling stop below the fixed header */
 main > div[id] {
   scroll-margin-top: var(--header-height);
 }
 
-/* Global font mapping */
 h1 {
   font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }

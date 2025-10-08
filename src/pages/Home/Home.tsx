@@ -1,10 +1,9 @@
-import { FaGithubSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import image from "../../assets/eliass.png"
 import imageBackground from '../../assets/blurry-gradient-haikei.png';
 import { motion } from "framer-motion";
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
+import { IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5'; 
+
 
 const Home = () => {
     const { t } = useTranslation();
@@ -50,16 +49,19 @@ const Home = () => {
                     {t('home.role')}
                 </motion.p>
 
+                
+        
+        
+
                 <div className="flex gap-4 md:gap-5 py-5">
                     <a href="https://github.com/Elias700?tab=overview&from=2025-09-01&to=2025-09-24" target="blanck">
-                        <FaGithubSquare className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
-                    </a>
-                    
-                    <a href="">
-                        <MdEmail className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                        <IoLogoLinkedin size={50} className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
                     </a>
                     <a href="https://www.linkedin.com/in/elias-ribeiro700/" target="blanck">
-                        <FaLinkedin className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer" />
+                        <IoLogoGithub size={50} className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer"/>
+                    </a>
+                     <a href="">
+                       <IoMailOutline size={55} className="text-3xl md:text-4xl text-[#00B58C] hover:text-[#CBCCD1] transition duration-[600ms] cursor-pointer"/>
                     </a>
                 </div>
                 

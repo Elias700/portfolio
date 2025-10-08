@@ -7,17 +7,14 @@ import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const Footer = () => {
     const { t } = useTranslation();
-    const bgColor = '#2E3138'; 
-    const itemColor = 'text-gray-700'; 
-    const iconSize = 18; 
-
+    
     return (
-        <footer className={`w-full bg-[${bgColor}] pt-8 pb-4`}>
-
+        <footer 
+            className="w-full pt-8 pb-4 bg-[#012119]"
+        >
             <h1 className="text-center text-3xl font-semibold mb-6 text-[#00B58C]">
                 &lt;Dev Elias/&gt;
             </h1>
-
 
             <div className={`
                 flex flex-col md:flex-row 
@@ -27,33 +24,33 @@ const Footer = () => {
                 px-4 sm:px-6 lg:px-8
             `}>
                 
-                <div className="mb-8 md:mb-0 md:mr-8">
-                    <img 
-                        src={image} 
-                        alt="Elias" 
-                        className={`
-                            h-60 w-60 object-cover 
-                            rounded-full 
-                            border-4 border-[#00B58C]
-                            shadow-xl cursor-pointer
-                        `}
-                    />
-                </div>
+            <div className="mb-8 md:mb-0 md:mr-8">
+                <img 
+                    src={image} 
+                    alt="Elias" 
+                    className={`
+                        h-60 w-60 object-cover 
+                        rounded-full 
+                        border-4 border-[#00B58C]
+                        shadow-xl cursor-pointer
+                    `}
+                />
+            </div>
 
-                <div className={`flex flex-col justify-center space-y-3 ${itemColor} text-lg mb-8 md:mb-0`}>
+                <div className={`flex flex-col justify-center space-y-3  text-lg mb-8 md:mb-0`}>
                     
                     <div className="flex items-center gap-3">
-                        <FaPhone size={iconSize} className="text-[#00B58C]" />
+                        <FaPhone size={20} className="text-[#00B58C]" />
                         <p className='text-gray-500'>(71) 9 8423-1897</p>
                     </div>
                     
                     <div className="flex items-center gap-3">
-                        <FaMapMarkerAlt size={iconSize} className="text-[#00B58C]" />
+                        <FaMapMarkerAlt size={20} className="text-[#00B58C]" />
                         <p className='text-gray-500'>Salvador - BA</p>
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <FaEnvelope size={iconSize} className="text-[#00B58C]" />
+                        <FaEnvelope size={20} className="text-[#00B58C]" />
                         <p className='text-gray-500'>elias_ribeiro07@outlook.com.br</p>
                     </div>
                 </div>
