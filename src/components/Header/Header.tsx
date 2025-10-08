@@ -37,30 +37,30 @@ export default function Header() {
 
   return (
     <header
-      className={`px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50 h-[10vh] 
+      className={`px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50 h-[var(--header-height)] 
       bg-[var(--header-bg)] transition-shadow duration-300 
       ${isScrolled ? 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]' : ''}`}
     >
-      <p className='text-[#00B58C] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
+      <p className='text-[var(--primary-500)] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
 
       {/* Menu desktop */}
       <nav className='hidden md:flex justify-center'>
         <ul 
           className='flex justify-center gap-8 lg:gap-10 
           [&>li]:relative 
-          [&>li]:text-[#00B58C] 
+          [&>li]:text-[var(--primary-500)] 
           [&>li]:cursor-pointer 
           [&>li]:text-xl lg:[&>li]:text-2xl 
           [&>li]:transition-all 
           [&>li]:duration-500 
-          [&>li]:hover:text-[#CBCCD1] 
+          [&>li]:hover:text-[var(--text-muted)] 
           [&>li]:after:content-[""] 
           [&>li]:after:absolute 
           [&>li]:after:left-0 
           [&>li]:after:-bottom-1 
           [&>li]:after:h-[2px] 
           [&>li]:after:w-0 
-          [&>li]:after:bg-[#CBCCD1] 
+          [&>li]:after:bg-[var(--text-muted)] 
           [&>li]:hover:after:w-full 
           [&>li]:after:transition-all 
           [&>li]:after:duration-500'
@@ -79,24 +79,24 @@ export default function Header() {
         <div className="relative">
           <FaGlobe
             size={24}
-            className="text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1]"
+            className="text-[var(--primary-500)] cursor-pointer transition duration-500 hover:text-[var(--text-muted)]"
             onClick={toggleMenu}
           />
 
           {open && (
-            <div className="absolute right-0 z-50 w-40 mt-2 border border-[#00B58C] shadow-lg">
+            <div className="absolute right-0 z-50 w-40 mt-2 border border-[var(--primary-500)] shadow-lg bg-[var(--card-bg)]">
               <button
                 onClick={() => choose('pt')}
-                className={`block w-full px-4 py-2 text-left text-[#CBCCD1] bg-[#1d1f24] transition duration-500 hover:bg-[#2E3138] cursor-pointer ${
-                  lang === 'pt' ? 'ring-1 ring-[#00B58C]' : ''
+                className={`block w-full px-4 py-2 text-left text-[var(--text-primary)] bg-[var(--card-bg)] transition duration-500 hover:opacity-90 cursor-pointer ${
+                  lang === 'pt' ? 'ring-1 ring-[var(--primary-500)]' : ''
                 }`}
               >
                 Português
               </button>
               <button
                 onClick={() => choose('en')}
-                className={`block w-full px-4 py-2 text-left text-[#CBCCD1] bg-[#1d1f24] transition duration-500 hover:bg-[#2E3138] cursor-pointer ${
-                  lang === 'en' ? 'ring-1 ring-[#00B58C]' : ''
+                className={`block w-full px-4 py-2 text-left text-[var(--text-primary)] bg-[var(--card-bg)] transition duration-500 hover:opacity-90 cursor-pointer ${
+                  lang === 'en' ? 'ring-1 ring-[var(--primary-500)]' : ''
                 }`}
               >
                 English
@@ -110,23 +110,23 @@ export default function Header() {
           size={24}
           title="Light"
           onClick={() => setTheme('light')}
-          className={`text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1] ${
-            theme === 'light' ? 'ring-1 ring-[#00B58C] rounded-full' : ''
+          className={`text-[var(--primary-500)] cursor-pointer transition duration-500 hover:text-[var(--text-muted)] ${
+            theme === 'light' ? 'ring-1 ring-[var(--primary-500)] rounded-full' : ''
           }`}
         />
         <FiMoon
           size={24}
           title="Dark"
           onClick={() => setTheme('dark')}
-          className={`text-[#00B58C] cursor-pointer transition duration-500 hover:text-[#CBCCD1] ${
-            theme === 'dark' ? 'ring-1 ring-[#00B58C] rounded-full' : ''
+          className={`text-[var(--primary-500)] cursor-pointer transition duration-500 hover:text-[var(--text-muted)] ${
+            theme === 'dark' ? 'ring-1 ring-[var(--primary-500)] rounded-full' : ''
           }`}
         />
 
         {/* Menu hambúrguer */}
         <button
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          className="md:hidden text-[#00B58C] hover:text-[#CBCCD1] transition duration-500"
+          className="md:hidden text-[var(--primary-500)] hover:text-[var(--text-muted)] transition duration-500"
           onClick={toggleMobile}
         >
           {mobileOpen ? <FiX size={26} /> : <FiMenu size={26} />}
@@ -135,13 +135,13 @@ export default function Header() {
 
       {/* Menu Mobile */}
       {mobileOpen && (
-        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40">
+        <div className="md:hidden fixed top-[var(--header-height)] left-0 right-0 z-40 bg-[var(--card-bg)] border-t border-[var(--primary-500)] shadow-xl">
           <ul className="flex flex-col gap-2 p-4">
-            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#home">{t('nav.home')}</a></li>
-            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#about">{t('nav.about')}</a></li>
-            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#projects">{t('nav.projects')}</a></li>
-            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#skills">{t('nav.skills')}</a></li>
-            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#contact">{t('nav.contact')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[var(--primary-500)] text-lg' href="#home">{t('nav.home')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[var(--primary-500)] text-lg' href="#about">{t('nav.about')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[var(--primary-500)] text-lg' href="#projects">{t('nav.projects')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[var(--primary-500)] text-lg' href="#skills">{t('nav.skills')}</a></li>
+            <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[var(--primary-500)] text-lg' href="#contact">{t('nav.contact')}</a></li>
           </ul>
         </div>
       )}

@@ -13,6 +13,16 @@
   --text-primary: #EEF4F2;
   --text-muted: #AAAFae;
 
+  /* === Typographic accents (Dark) === */
+  --heading-color: var(--primary-500);   /* h2, títulos secundários */
+  --subtitle-color: #E6FFF7;            /* h1, títulos de destaque */
+  --hero-text: #CBCCD1;                 /* textos do herói (mesma cor no light) */
+
+  /* === Card text defaults (Dark) === */
+  --card-title-color: #eef4f2;
+  --card-desc-color: #aaafae;
+  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.30);
+
   /* === Primary Brand Palette (based on #00B58C) === */
   --primary-50: #E6FFF7;   /* bem claro */
   --primary-100: #B3FFE3;  /* claro */
@@ -36,10 +46,20 @@
   /* === Light Theme Variants === */
   --body-bg: #F5F7FB;
   --header-bg: #FFFFFF;
-  --section-bg: #F0F3F8;
-  --card-bg: #FFFFFF;
+  --section-bg: #F5F7FB; /* igual ao fundo geral conforme solicitado */
+  --card-bg: #E9EEF5; /* ligeiramente mais escuro que o fundo para destacar cards */
   --text-primary: #1F2937;
   --text-muted: #475569;
+
+  /* === Typographic accents (Light) === */
+  --heading-color: #0B6B58;  /* variação mais escura do verde para contrastar no claro */
+  --subtitle-color: #1F2937; /* títulos principais escuros no tema claro */
+  --hero-text: #CBCCD1;      /* manter igual ao dark conforme solicitação */
+
+  /* === Card text tweaks (Light) === */
+  --card-title-color: #1F2937; /* título mais escuro no light */
+  --card-desc-color: #475569;  /* descrição mais escura e legível no light */
+  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.12); /* sombra sutil para destacar o título */
 
   /* Adjusted brand tones for visibility in light mode */
   --primary-50: #E9FFF8;

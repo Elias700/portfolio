@@ -64,16 +64,16 @@ const Skills = () => {
     <>
       <main className='min-h-[100vh]'>
         <div className='px-6 py-6 md:py-8'>
-          <h2 className='text-center text-2xl md:text-3xl text-[#00B58C]'>{t('skills.title')}</h2>
-          <h1 className='text-center text-4xl md:text-6xl lg:text-7xl text-emerald-50'>{t('skills.subtitle')}</h1>
+          <h2 className='text-center text-2xl md:text-3xl text-[var(--heading-color)]'>{t('skills.title')}</h2>
+          <h1 className='text-center text-4xl md:text-6xl lg:text-7xl text-[var(--subtitle-color)]'>{t('skills.subtitle')}</h1>
         </div>
         <div className='flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-16 px-4 md:px-6 p-10'>
           {icons.map((item) => (
-            <main key={item.title} className='rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] w-72 sm:w-80 bg-[var(--card-bg)]' >
-              <section className='flex flex-col items-center p-6 md:p-8 text-center cursor-pointer '>
+            <main key={item.title} className='rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] w-full sm:w-72 md:w-80 bg-[var(--card-bg)]' >
+              <section className='flex flex-col items-center p-6 md:p-8 text-center cursor-pointer'>
                 <item.icon size={44} color="#00B58C"/>
-                <h3 className="text-lg md:text-xl font-semibold text-[#eef4f2] p-4 md:p-5">{item.title}</h3>
-                <p className='text-[#aaafae] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{t(item.descKey as any)}</p>
+                <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{item.title}</h3>
+                <p className='text-[var(--card-desc-color)] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{t(item.descKey as any)}</p>
               </section>
             </main>
           ))}

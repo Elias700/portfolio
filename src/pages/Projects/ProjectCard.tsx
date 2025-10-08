@@ -11,23 +11,23 @@ const ProjectCard = ({ name, description, imageUrl }: ProjectProps) => {
   const { t } = useTranslation();
   return (
     <div 
-      className="relative flex flex-col  rounded-xl bg-clip-border text-gray-700 shadow-md transition hover:scale-[1.02] bg-gradient-to-br from-[#0a0f0e] via-[var(--primary-800)] to-[var(--primary-600)]"
+      className="relative flex flex-col rounded-xl bg-clip-border shadow-md transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] bg-[var(--card-bg)]"
       >
       <div 
-        className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg"
+        className="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-clip-border shadow-lg aspect-[16/9] sm:aspect-[4/3]"
         >
         <img
             src={imageUrl}
             alt={name}
-            className="w-full h-40 object-cover rounded-md mb-3"
+            className="absolute inset-0 w-full h-full object-cover"
           />
       </div>
       <div className="px-5 py-4 md:p-6">
-        <h5 className="mb-2 block font-sans text-lg md:text-xl font-semibold leading-snug tracking-normal text-white">
-        {name}
+        <h5 className="mb-2 block font-sans text-lg md:text-xl font-semibold leading-snug tracking-normal text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>
+          {name}
         </h5>
-        <p className="block font-sans text-sm md:text-base font-light leading-relaxed antialiased text-white">
-        {description}
+        <p className="block font-sans text-sm md:text-base font-light leading-relaxed antialiased text-[var(--card-desc-color)]">
+          {description}
         </p>
       </div>
       <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0 flex gap-10 md:gap-10 justify-between">
