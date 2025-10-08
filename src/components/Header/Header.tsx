@@ -11,6 +11,17 @@ export default function Header() {
     return stored === 'light' || stored === 'dark' ? (stored as 'dark' | 'light') : 'dark';
   });
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // 👈 novo estado
+
+  // Detectar scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // ativa a sombra ao rolar mais de 10px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -23,40 +34,48 @@ export default function Header() {
     setLang(code);
     setOpen(false);
   };
+
   return (
-    <header className="px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50" style={{ backgroundColor: 'var(--header-bg)', height: '10vh'}}>
+    <header
+      className={`px-6 md:px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 w-full z-50 h-[10vh] 
+      bg-[var(--header-bg)] transition-shadow duration-300 
+      ${isScrolled ? 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]' : ''}`}
+    >
       <p className='text-[#00B58C] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
 
+      {/* Menu desktop */}
       <nav className='hidden md:flex justify-center'>
         <ul 
-            className='flex justify-center gap-8 lg:gap-10 
-            [&>li]:relative 
-            [&>li]:text-[#00B58C] 
-            [&>li]:cursor-pointer 
-            [&>li]:text-xl lg:[&>li]:text-2xl 
-            [&>li]:transition-all 
-            [&>li]:duration-500 
-            [&>li]:hover:text-[#CBCCD1] 
-            [&>li]:after:content-[""] 
-            [&>li]:after:absolute 
-            [&>li]:after:left-0 
-            [&>li]:after:-bottom-1 
-            [&>li]:after:h-[2px] 
-            [&>li]:after:w-0 
-            [&>li]:after:bg-[#CBCCD1] 
-            [&>li]:hover:after:w-full 
-            [&>li]:after:transition-all 
-            [&>li]:after:duration-500'
-          >
-            <li><a href="#home">{t('nav.home')}</a></li>
-            <li><a href="#about">{t('nav.about')}</a></li>
-            <li><a href="#projects">{t('nav.projects')}</a></li>
-            <li><a href="#skills">{t('nav.skills')}</a></li>
-            <li><a href="#contact">{t('nav.contact')}</a></li>
-          </ul>
+          className='flex justify-center gap-8 lg:gap-10 
+          [&>li]:relative 
+          [&>li]:text-[#00B58C] 
+          [&>li]:cursor-pointer 
+          [&>li]:text-xl lg:[&>li]:text-2xl 
+          [&>li]:transition-all 
+          [&>li]:duration-500 
+          [&>li]:hover:text-[#CBCCD1] 
+          [&>li]:after:content-[""] 
+          [&>li]:after:absolute 
+          [&>li]:after:left-0 
+          [&>li]:after:-bottom-1 
+          [&>li]:after:h-[2px] 
+          [&>li]:after:w-0 
+          [&>li]:after:bg-[#CBCCD1] 
+          [&>li]:hover:after:w-full 
+          [&>li]:after:transition-all 
+          [&>li]:after:duration-500'
+        >
+          <li><a href="#home">{t('nav.home')}</a></li>
+          <li><a href="#about">{t('nav.about')}</a></li>
+          <li><a href="#projects">{t('nav.projects')}</a></li>
+          <li><a href="#skills">{t('nav.skills')}</a></li>
+          <li><a href="#contact">{t('nav.contact')}</a></li>
+        </ul>
       </nav>
 
+      {/* Ícones e menu mobile */}
       <div className="relative flex items-center gap-4 md:gap-5">
+        {/* Seleção de idioma */}
         <div className="relative">
           <FaGlobe
             size={24}
@@ -74,7 +93,6 @@ export default function Header() {
               >
                 Português
               </button>
-
               <button
                 onClick={() => choose('en')}
                 className={`block w-full px-4 py-2 text-left text-[#CBCCD1] bg-[#1d1f24] transition duration-500 hover:bg-[#2E3138] cursor-pointer ${
@@ -87,6 +105,7 @@ export default function Header() {
           )}
         </div>
 
+        {/* Botões de tema */}
         <FiSun
           size={24}
           title="Light"
@@ -95,7 +114,6 @@ export default function Header() {
             theme === 'light' ? 'ring-1 ring-[#00B58C] rounded-full' : ''
           }`}
         />
-
         <FiMoon
           size={24}
           title="Dark"
@@ -105,7 +123,7 @@ export default function Header() {
           }`}
         />
 
-        {/* Botão Hamburger - visível em mobile/tablet */}
+        {/* Menu hambúrguer */}
         <button
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           className="md:hidden text-[#00B58C] hover:text-[#CBCCD1] transition duration-500"
@@ -115,9 +133,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Menu Mobile/Tablet (overlay) */}
+      {/* Menu Mobile */}
       {mobileOpen && (
-        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40" >
+        <div className="md:hidden fixed top-[64px] left-0 right-0 z-40">
           <ul className="flex flex-col gap-2 p-4">
             <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#home">{t('nav.home')}</a></li>
             <li className='py-2'><a onClick={() => setMobileOpen(false)} className='block text-[#00B58C] text-lg' href="#about">{t('nav.about')}</a></li>

@@ -4,16 +4,19 @@ import { useTranslation } from '../../i18n/LanguageContext.tsx';
 
 const About = () => {
   const { t } = useTranslation();
+
   return (
-    <div className={`relative min-h-[90vh] pb-8 md:pb-12 mb-6 md:mb-10 overflow-hidden`} style={{ backgroundColor: 'var(--section-bg)' }}>
-      <div className='p-10'>
-        <h2 className={`text-center text-3xl text-[#00B58C]`}>{t('about.title')}</h2>
-        <h1 className={`text-center text-7xl text-emerald-50`}>{t('about.subtitle')}</h1>
+    <div
+      className="relative min-h-[90vh] pb-8 md:pb-12 mb-6 md:mb-10 overflow-hidden bg-[--body-bg]"
+    >
+      <div className="p-10">
+        <h2 className="text-center text-3xl text-[#00B58C]">{t('about.title')}</h2>
+        <h1 className="text-center text-7xl text-emerald-50">{t('about.subtitle')}</h1>
       </div>
 
-      <section className="flex flex-col md:flex-row justify-center items-center gap-50 px-4 ">
-        <div className='max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10'>
-          <p className={`bg-transparent text-[#00B58C] text-lg text-center`}>
+      <section className="flex flex-col md:flex-row justify-center items-center gap-50 p-10">
+        <div className="max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10">
+          <p className="bg-transparent text-[#00B58C] text-lg text-center">
             {t('about.paragraph')}
           </p>
 
@@ -26,28 +29,22 @@ const About = () => {
           </button>
         </div>
 
-        {/* Imagem: fade-in + sobe/desce sem delay + hover glow */}
+        {/* Imagem: apenas fade-in + hover */}
         <motion.img
           src={image}
           alt="Elias Ribeiro"
-          className='h-120 rounded-lg hover:cursor-pointer'
+          className="h-120 rounded-lg hover:cursor-pointer"
           initial={{ opacity: 0, y: 20 }} // começa levemente abaixo e invisível
-          animate={{ opacity: 1, y: [0, -12] }} // anima opacidade e faz keyframes y (vai e volta)
+          animate={{ opacity: 1, y: 0 }}  // aparece e sobe levemente (uma única vez)
           transition={{
-            opacity: { duration: 0.9, ease: "easeOut" }, // fade-in rápido
-            y: {
-              duration: 2.2,
-              ease: "linear",           // ESSENCIAL: linear remove o slowdown nas extremidades
-              repeat: Infinity,
-              repeatType: "reverse",    // inverte a animação (vai e volta)
-              repeatDelay: 0            // garante que não haja pausa entre ciclos
-            }
+            opacity: { duration: 0.9, ease: "easeOut" },
+            y: { duration: 0.8, ease: "easeOut" }
           }}
           whileHover={{
-            scale: 1.03,
-            boxShadow: "0 18px 40px rgba(0,181,140,0.18)"
+            scale: 1.05,
+            boxShadow: "0 20px 40px rgba(0,181,140,0.25)"
           }}
-          style={{ willChange: "transform, opacity" }} // ajuda o navegador a otimizar
+          style={{ willChange: "transform, opacity" }}
         />
       </section>
     </div>

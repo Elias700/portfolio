@@ -10,7 +10,7 @@ const Footer = () => {
     
     return (
         <footer 
-            className="w-full pt-8 pb-4 bg-[#012119]"
+            className="w-full pt-8 pb-4 bg-[var(--card-bg)]"
         >
             <h1 className="text-center text-3xl font-semibold mb-6 text-[#00B58C]">
                 &lt;Dev Elias/&gt;

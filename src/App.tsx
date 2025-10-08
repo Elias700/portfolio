@@ -10,7 +10,7 @@ import './style.css';
 function App() {
   return (
     <>
-      <Header />
+      <Header/>
 
       <main>
         <div id="home">

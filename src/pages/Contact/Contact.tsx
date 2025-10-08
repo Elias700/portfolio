@@ -6,7 +6,7 @@ const App = () => {
    
     return (
         
-        <div className="min-h-screen flex justify-center items-center bg-[#20272F] p-4 sm:p-8">
+        <div className="min-h-screen flex justify-center items-center bg-[var(--body-bg)] p-4 sm:p-8">
     
             <div
                 className="max-w-md w-full bg-gradient-to-br from-[#2E3138] to-[#205251] rounded-xl shadow-2xl overflow-hidden p-8 space-y-6 slideInFromLeft"

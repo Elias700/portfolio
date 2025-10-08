@@ -12,12 +12,12 @@ const Projects = () => {
   ];
 
   return (
-    <section className="relative" style={{ backgroundColor: 'var(--section-bg)' }}>
+    <section className="relative bg-[--body-bg]">
         <div className="max-w-6xl mx-auto px-6 py-8 md:px-10 md:py-12">
           <h2 className='text-center text-2xl md:text-3xl text-[#00B58C]'>{t('projects.title')}</h2>
           <h1 className='text-center text-4xl md:text-6xl lg:text-7xl text-emerald-50'>{t('projects.subtitle')}</h1>
         </div>
-      <div className="max-w-6xl mx-auto px-4 pb-16 md:px-10">
+      <div className="max-w-6xl mx-auto px-4 pb-16 md:px-10 p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 cursor-pointer">
           {projects.map((project) => (
             <ProjectCard
