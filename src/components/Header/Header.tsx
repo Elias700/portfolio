@@ -2,16 +2,17 @@ import { FaGlobe } from 'react-icons/fa';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
+import Logo from '../../assets/logo-elias-removebg-preview.png';
 
 export default function Header() {
   const { t, setLang, lang } = useTranslation();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     const stored = localStorage.getItem('theme');
     return stored === 'light' || stored === 'dark' ? (stored as 'dark' | 'light') : 'dark';
   });
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // 👈 novo estado
+  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false); // 👈 novo estado
 
   // Detectar scroll
   useEffect(() => {
@@ -41,10 +42,13 @@ export default function Header() {
       bg-[var(--header-bg)] transition-shadow duration-300 
       ${isScrolled ? 'shadow-[0_4px_15px_rgba(0,0,0,0.4)]' : ''}`}
     >
-      <p className='text-[var(--primary-500)] text-xl md:text-2xl font-dancing italic'>&lt;Dev Elias/&gt;</p>
+      <img 
+        src={Logo} 
+        alt="Logo" 
+        className='h-12 w-auto md:h-16 lg:h-20'/>
 
       {/* Menu desktop */}
-      <nav className='hidden md:flex justify-center'>
+      <nav className='hidden md:flex'>
         <ul 
           className='flex justify-center gap-8 lg:gap-10 
           [&>li]:relative 
@@ -87,17 +91,26 @@ export default function Header() {
             <div className="absolute right-0 z-50 w-40 mt-2 border border-[var(--primary-500)] shadow-lg bg-[var(--card-bg)]">
               <button
                 onClick={() => choose('pt')}
-                className={`block w-full px-4 py-2 text-left text-[var(--text-primary)] bg-[var(--card-bg)] transition duration-500 hover:opacity-90 cursor-pointer ${
-                  lang === 'pt' ? 'ring-1 ring-[var(--primary-500)]' : ''
-                }`}
+                className={`
+                  block w-full px-4 py-2 text-left cursor-pointer transition duration-500 hover:opacity-90
+                  text-[var(--text-primary)]
+                  bg-[var(--card-bg)]
+                  hover:bg-[var(--hover-bg)] 
+                  ${lang === 'pt' ? 'bg-[var(--hover-bg)]' : ''}
+                `}
               >
                 Português
               </button>
+
               <button
                 onClick={() => choose('en')}
-                className={`block w-full px-4 py-2 text-left text-[var(--text-primary)] bg-[var(--card-bg)] transition duration-500 hover:opacity-90 cursor-pointer ${
-                  lang === 'en' ? 'ring-1 ring-[var(--primary-500)]' : ''
-                }`}
+                className={`
+                  block w-full px-4 py-2 text-left cursor-pointer transition duration-500 hover:opacity-90
+                  text-[var(--text-primary)]
+                  bg-[var(--card-bg)]
+                  hover:bg-[var(--hover-bg)] 
+                  ${lang === 'en' ? 'bg-[var(--hover-bg)]' : ''}
+                `}
               >
                 English
               </button>

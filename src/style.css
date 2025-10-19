@@ -14,28 +14,29 @@
   --text-muted: #AAAFae;
 
   /* === Typographic accents (Dark) === */
-  --heading-color: var(--primary-500);   /* h2, títulos secundários */
-  --subtitle-color: #E6FFF7;            /* h1, títulos de destaque */
-  --hero-text: #CBCCD1;                 /* textos do herói (mesma cor no light) */
+  --heading-color: var(--primary-500); 	
+  --subtitle-color: #E6FFF7; 			
+  --hero-text: #CBCCD1; 				
 
   /* === Card text defaults (Dark) === */
   --card-title-color: #eef4f2;
   --card-desc-color: #aaafae;
   --card-title-shadow: 0 1px 0 rgba(0,0,0,0.30);
 
-  /* === Primary Brand Palette (based on #00B58C) === */
-  --primary-50: #E6FFF7;   /* bem claro */
-  --primary-100: #B3FFE3;  /* claro */
-  --primary-200: #80FFD0;  /* suave */
-  --primary-300: #4DFFBC;  /* médio */
-  --primary-400: #1AFFA8;  /* vívido */
-  --primary-500: #00B58C;  /* cor principal */
-  --primary-600: #009473;  /* mais escuro */
-  --primary-700: #00735A;  /* profundo */
-  --primary-800: #005242;  /* quase escuro */
-  --primary-900: #00312A;  /* muito escuro */
+  --primary-50: #E6FFF7; 	
+  --primary-100: #B3FFE3; 	
+  --primary-200: #80FFD0; 	
+  --primary-300: #4DFFBC; 	
+  --primary-400: #1AFFA8; 	
+  --primary-500: #00B58C; 	
+  --primary-600: #009473; 
+  --primary-700: #00735A; 	
+  --primary-800: #005242; 	
+  --primary-900: #00312A; 	
+  
+  /* === Variável de Hover (Dark) === */
+  --hover-bg: #2b3347;
 
-  /* === Accent and States === */
   --accent: var(--primary-400);
   --success: #00B58C;
   --warning: #FFD56A;
@@ -46,20 +47,23 @@
   /* === Light Theme Variants === */
   --body-bg: #F5F7FB;
   --header-bg: #FFFFFF;
-  --section-bg: #F5F7FB; /* igual ao fundo geral conforme solicitado */
-  --card-bg: #E9EEF5; /* ligeiramente mais escuro que o fundo para destacar cards */
+  --section-bg: #F5F7FB;
+  --card-bg: #E9EEF5; 
   --text-primary: #1F2937;
   --text-muted: #475569;
+  
+  /* === Variável de Hover (Light) === */
+  --hover-bg: #d9dde4;
 
   /* === Typographic accents (Light) === */
-  --heading-color: #0B6B58;  /* variação mais escura do verde para contrastar no claro */
-  --subtitle-color: #1F2937; /* títulos principais escuros no tema claro */
-  --hero-text: #CBCCD1;      /* manter igual ao dark conforme solicitação */
+  --heading-color: #0B6B58; 	
+  --subtitle-color: #1F2937; 
+  --hero-text: #CBCCD1; 		
 
   /* === Card text tweaks (Light) === */
-  --card-title-color: #1F2937; /* título mais escuro no light */
-  --card-desc-color: #475569;  /* descrição mais escura e legível no light */
-  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.12); /* sombra sutil para destacar o título */
+  --card-title-color: #1F2937; 
+  --card-desc-color: #475569; 	
+  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.12); 
 
   /* Adjusted brand tones for visibility in light mode */
   --primary-50: #E9FFF8;
