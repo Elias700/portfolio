@@ -1,14 +1,52 @@
 import ProjectCard from "./ProjectCard";
 import { useTranslation } from "../../i18n/LanguageContext.tsx";
+import Nikel from "../../assets/projeto-nikel.png";
+import Batman from "../../assets/projeto-batman.png";
 
 const Projects = () => {
   const { t } = useTranslation();
+  
   const projects = [
-    { id: 1, name: t('projects.item.bmi.name'), description: t('projects.item.bmi.desc'), imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png"},
-    { id: 2, name: t('projects.item.bmi.name'), description: t('projects.item.bmi.desc'), imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png" },
-    { id: 3, name: t('projects.item.bmi.name'), description: t('projects.item.bmi.desc'), imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png" },
-    { id: 5, name: t('projects.item.bmi.name'), description: t('projects.item.bmi.desc'), imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png" },
-    { id: 6, name: t('projects.item.bmi.name'), description: t('projects.item.bmi.desc'), imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png" },
+    { 
+      id: 1, 
+      name: t('projects.item.nikel.name'), 
+      description: t('projects.item.nikel.desc'), 
+      imageUrl: Nikel,
+      deployUrl: "https://nikel-mx1qow612-elias700s-projects.vercel.app/",
+      githubUrl: "https://github.com/Elias700/Nikel"
+    }, 
+    { 
+      id: 2, 
+      name: t('projects.item.batman.name'), 
+      description: t('projects.item.batman.desc'), 
+      imageUrl: Batman,
+      deployUrl: "https://site-batman-roe9a5tt4-elias700s-projects.vercel.app/",
+      githubUrl: "https://github.com/Elias700/Site-Batman" 
+    },
+    { 
+      id: 3, 
+      name: t('projects.item.bmi.name'), 
+      description: t('projects.item.bmi.desc'), 
+      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
+      deployUrl: "",
+      githubUrl: ""
+     },
+    { 
+      id: 5, 
+      name: t('projects.item.bmi.name'), 
+      description: t('projects.item.bmi.desc'), 
+      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
+      deployUrl: "",
+      githubUrl: ""
+    },
+    { 
+      id: 6, 
+      name: t('projects.item.bmi.name'), 
+      description: t('projects.item.bmi.desc'), 
+      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
+      deployUrl: "",
+      githubUrl: ""
+    },
   ];
 
   return (
@@ -25,6 +63,8 @@ const Projects = () => {
               name={project.name}
               description={project.description}
               imageUrl={project.imageUrl}
+              deployUrl={project.deployUrl}
+              githubUrl={project.githubUrl}
             />
           ))}
         </div>
