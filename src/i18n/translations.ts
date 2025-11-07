@@ -26,6 +26,12 @@ export type TranslationDict = {
  'projects.item.nikel.desc': string;
  'projects.item.batman.name': string;       
  'projects.item.batman.desc': string;
+ 'projects.item.rotadomar.name': string;
+ 'projects.item.rotadomar.desc': string;
+  'projects.item.filmesdev.name': string;
+  'projects.item.filmesdev.desc': string;
+
+
   // --- FIM CHAVES NOVAS ---
 
  'projects.item.bmi.name': string;
@@ -89,6 +95,11 @@ export const translations: Record<Lang, TranslationDict> = {
   'projects.item.nikel.desc': 'Sistema de gestão de finanças pessoais com autenticação de usuário e controle detalhado de transações.',
   'projects.item.batman.name': 'The Batman',
   'projects.item.batman.desc': 'Site inspirado no filme The Batman, criado para fornecer informações sobre o longa e permitir que os usuários simulem a compra de ingressos.',
+  'projects.item.rotadomar.name': 'Rota do Mar',
+  'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
+  'projects.item.filmesdev.name': 'Filmes Dev',
+  'projects.item.filmesdev.desc': 'Projeto de hub digital em desenvolvimento para fãs de entretenimento, reunindo em uma única plataforma informações detalhadas sobre Filmes, Séries e Animes. O objetivo é criar uma experiência rica e intuitiva para a descoberta de títulos e consulta de dados.',
+
     // --- FIM VALORES NOVOS ---
   'projects.item.bmi.name': 'Calculadora IMC',
   'projects.item.bmi.desc': 'Calcular IMC',
@@ -149,6 +160,10 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.nikel.desc': 'Personal finance management system with user authentication and detailed transaction control.',
     'projects.item.batman.name': 'The Batman',
     'projects.item.batman.desc': 'Website inspired by the movie The Batman, created to provide information about the film and allow users to simulate ticket purchases.',
+    'projects.item.rotadomar.name': 'Rota do Mar',
+    'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
+    'projects.item.filmesdev.name': 'Dev Movies',
+     'projects.item.filmesdev.desc': 'Digital hub project in development for entertainment fans, bringing together detailed information about Movies, Series, and Anime on a single platform. The goal is to create a rich and intuitive experience for discovering titles and accessing data.',
      // --- FIM VALORES NOVOS ---
    'projects.item.bmi.name': 'BMI Calculator',
    'projects.item.bmi.desc': 'Calculate BMI',

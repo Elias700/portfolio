@@ -2,6 +2,8 @@ import ProjectCard from "./ProjectCard";
 import { useTranslation } from "../../i18n/LanguageContext.tsx";
 import Nikel from "../../assets/projeto-nikel.png";
 import Batman from "../../assets/projeto-batman.png";
+import RotaDoMar from '../../assets/projeto-rotadomar.png'
+import ProjetoEmAndamento from '../../assets/projetoEmAndamento.png'
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -25,25 +27,25 @@ const Projects = () => {
     },
     { 
       id: 3, 
-      name: t('projects.item.bmi.name'), 
-      description: t('projects.item.bmi.desc'), 
-      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
-      deployUrl: "",
-      githubUrl: ""
+      name: t('projects.item.rotadomar.name'), 
+      description: t('projects.item.rotadomar.desc'), 
+      imageUrl: RotaDoMar,
+      deployUrl: "https://rota-do-mar.vercel.app/",
+      githubUrl: "https://github.com/Elias700/Rota-do-Mar"
      },
     { 
-      id: 5, 
-      name: t('projects.item.bmi.name'), 
-      description: t('projects.item.bmi.desc'), 
-      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
+      id: 4, 
+      name: t('projects.item.filmesdev.name'), 
+      description: t('projects.item.filmesdev.desc'), 
+      imageUrl: ProjetoEmAndamento,
       deployUrl: "",
       githubUrl: ""
     },
     { 
-      id: 6, 
+      id: 5, 
       name: t('projects.item.bmi.name'), 
       description: t('projects.item.bmi.desc'), 
-      imageUrl: "https://becode.com.br/wp-content/uploads/2018/03/landing-page-ex-1.png",
+      imageUrl: ProjetoEmAndamento,
       deployUrl: "",
       githubUrl: ""
     },
