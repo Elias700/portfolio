@@ -11,9 +11,9 @@ const LearningSkills = () => {
     };
 
     const skills: Skills[] = [
-        {title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql},
-        {title: 'Java', description: t('learning.java.desc'), icon: DiJava},
-        {title: 'Linux', description: t('learning.linux.desc'), icon: DiLinux}
+        { title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql },
+        { title: 'Java', description: t('learning.java.desc'), icon: DiJava },
+        { title: 'Linux', description: t('learning.linux.desc'), icon: DiLinux }
     ];
 
     return (
@@ -24,15 +24,15 @@ const LearningSkills = () => {
             </div>
             <section className='flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-16 px-4 md:px-6 p-10'>
                 {skills.map((skill) => (
-                <div key={skill.title} className='rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] bg-[var(--card-bg)]'>
-                    <div className='flex flex-col items-center p-6 md:p-8 lg:p-10 w-full sm:w-72 md:w-80 text-center cursor-pointer'>
-                        <skill.icon size={44} color="#00B58C"/> 
-                        <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{skill.title}</h3>
-                        <p className='text-[var(--card-desc-color)] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{skill.description}</p>
+                    <div key={skill.title} className='rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] bg-[var(--card-bg)]'>
+                        <div className='flex flex-col items-center p-6 md:p-8 lg:p-10 w-full sm:w-72 md:w-80 text-center cursor-pointer'>
+                            <skill.icon size={44} color="#00B58C" />
+                            <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{skill.title}</h3>
+                            <p className='text-[var(--card-desc-color)] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{skill.description}</p>
+                        </div>
                     </div>
-                </div>
                 ))}
-            </section> 
+            </section>
         </main>
     )
 };

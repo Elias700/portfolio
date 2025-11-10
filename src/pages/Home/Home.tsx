@@ -1,8 +1,7 @@
-import image from "../../assets/eliass.png";
-import imageBackground from '../../assets/blurry-gradient-haikei.png';
 import { motion } from "framer-motion";
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 import { IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5'; 
+import imagee from '../../assets/eliasss.png'
 
 const Home = () => {
   const { t } = useTranslation();
@@ -36,7 +35,7 @@ const Home = () => {
           className="max-w-xl w-full"
         >
           <motion.p className="text-2xl md:text-3xl lg:text-4xl text-[var(--hero-text)]" variants={textVariants}>
-            <strong className="text-3xl md:text-4xl lg:text-5xl text-[var(--hero-text)]">{t('home.hello')}</strong>{" "}
+            <strong className="text-3xl md:text-4xl lg:text-5xl text-[var(--hero-text)]">{t('home.hello')}</strong>
             {t('home.myNameIs')}
           </motion.p>
 
@@ -53,7 +52,10 @@ const Home = () => {
           </motion.p>
 
           <div className="flex gap-4 md:gap-5 py-5">
-            <a href="https://github.com/Elias700?tab=overview&from=2025-09-01&to=2025-09-24" target="blanck">
+            <a 
+              href="https://github.com/Elias700?tab=overview&from=2025-09-01&to=2025-09-24" 
+              target="blanck"
+            >
               <IoLogoLinkedin size={50} className="text-3xl md:text-4xl text-[var(--primary-500)] 
               hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer" 
             />
@@ -111,7 +113,7 @@ const Home = () => {
           }}
         >
           <img
-            src={image}
+            src={imagee}
             alt="Elias Ribeiro"
             className="relative z-10 w-56 sm:w-72 md:w-[22rem] lg:w-[28rem] h-auto object-contain"
           />

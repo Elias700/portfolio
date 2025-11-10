@@ -1,4 +1,4 @@
-import image from '../../assets/elias2-removebg-preview.png';
+import Logo from '../../assets/logo-elias-removebg-preview.png'
 import { 
     FaPhone, FaMapMarkerAlt, FaEnvelope,
     FaLinkedinIn, FaGithub
@@ -12,10 +12,6 @@ const Footer = () => {
         <footer 
             className="w-full pt-8 pb-4 bg-[var(--card-bg)]"
         >
-            <h1 className="text-center text-3xl font-semibold mb-6 text-[var(--heading-color)]">
-                &lt;Dev Elias/&gt;
-            </h1>
-
             <div className={`
                 flex flex-col md:flex-row 
                 justify-around md:justify-between 
@@ -24,21 +20,13 @@ const Footer = () => {
                 px-4 sm:px-6 lg:px-8
             `}>
                 
-            <div className="mb-8 md:mb-0 md:mr-8">
                 <img 
-                    src={image} 
-                    alt="Elias" 
-                    className={`
-                        w-32 h-auto sm:w-40 md:w-48 lg:w-60 object-cover 
-                        rounded-full 
-                        border-4 border-[var(--primary-500)]
-                        shadow-xl cursor-pointer
-                    `}
+                    src={Logo} 
+                    alt="logo" 
+                    className='h-12 w-auto md:h-16 lg:h-20'
                 />
-            </div>
 
                 <div className={`flex flex-col justify-center space-y-3  text-lg mb-8 md:mb-0`}>
-                    
                     <div className="flex items-center gap-3">
                         <FaPhone size={20} className="text-[var(--primary-500)]" />
                         <p className='text-[var(--text-muted)]'>(71) 9 8423-1897</p>
