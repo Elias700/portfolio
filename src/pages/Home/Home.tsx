@@ -61,38 +61,24 @@ const Home = () => {
               />
             </a>
 
-            <a href="https://github.com/Elias700" target="blanck">
+            <a href="https://github.com/Elias700"
+              target="blanck"
+            >
               <IoLogoGithub size={50} className="text-3xl md:text-4xl text-[var(--primary-500)] 
               hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer"
               />
             </a>
 
             <a href="mailto:elias_ribeiro07@outlook.com.br">
-              <IoMailOutline 
-                size={55} 
+              <IoMailOutline
+                size={55}
                 className="text-3xl md:text-4xl text-[var(--primary-500)] 
                 hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer"
               />
             </a>
           </div>
 
-          <button
-            className="group/button relative inline-flex items-center justify-center overflow-hidden
-            rounded-md bg-[color-mix(in_oklab,var(--card-bg)_90%,transparent)] backdrop-blur-lg px-5 
-            md:px-6 py-2 text-sm md:text-base font-semibold text-[var(--text-primary)] transition-all 
-            duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-[var(--primary-700)]/40 
-            border border-[var(--primary-500)] cursor-pointer w-52 md:w-60"
-          >
-            <a href="file:///C:/Users/elias/Downloads/Curriculo_EliasRibeiro%20(1).pdf" target="blanck">
-              <span className="text-base md:text-lg">{t('home.resume')}</span>
-              <div className="absolute inset-0 flex h-full w-full justify-center 
-              [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000
-              group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
-              >
-                <div className="relative h-full w-10 bg-[var(--primary-500)]"></div>
-              </div>
-            </a>
-          </button>
+
         </motion.div>
 
         {/* Imagem com efeito de subir e descer */}

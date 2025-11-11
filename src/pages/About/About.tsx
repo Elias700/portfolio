@@ -5,6 +5,9 @@ import { useTranslation } from '../../i18n/LanguageContext.tsx';
 const About = () => {
   const { t } = useTranslation();
 
+  // URL do WhatsApp com seu número e mensagem de rascunho codificada
+  const whatsappUrl = "https://wa.me/5571984231897?text=Ol%C3%A1%2C%20vim%20do%20portfólio%20e%20gostaria%20de%20conversar.";
+
   return (
     <div
       className="relative min-h-[90vh] pb-8 md:pb-12 mb-6 md:mb-10 overflow-hidden bg-[--body-bg]"
@@ -20,13 +23,17 @@ const About = () => {
             {t('about.paragraph')}
           </p>
 
-          <button 
+          {/* O elemento <button> foi substituído pelo <a> */}
+          <a
+            href={whatsappUrl} // URL do WhatsApp
+            target="_blank" // Abre em nova aba/aplicativo
+            rel="noopener noreferrer" // Recomendado por segurança
             className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-[color-mix(in_oklab,var(--card-bg)_90%,transparent)] backdrop-blur-lg px-6 py-2 text-base font-semibold text-[var(--text-primary)] transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-2xl hover:shadow-[var(--primary-700)]/40 border border-[var(--primary-500)] cursor-pointer w-60">
             <span className="text-lg">{t('about.button')}</span>
             <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
               <div className="relative h-full w-10 bg-[var(--primary-500)]"></div>
             </div>
-          </button>
+          </a>
         </div>
 
         {/* Imagem: apenas fade-in + hover */}
@@ -34,8 +41,8 @@ const About = () => {
           src={image}
           alt="Elias Ribeiro"
           className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto rounded-lg hover:cursor-pointer"
-          initial={{ opacity: 0, y: 20 }} // começa levemente abaixo e invisível
-          animate={{ opacity: 1, y: 0 }}  // aparece e sobe levemente (uma única vez)
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             opacity: { duration: 0.9, ease: "easeOut" },
             y: { duration: 0.8, ease: "easeOut" }
