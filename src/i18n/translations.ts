@@ -7,6 +7,7 @@ export type TranslationDict = {
  'nav.projects': string;
  'nav.skills': string;
  'nav.contact': string;
+ 'nav.certifications': string;
  // Home
  'home.hello': string;
  'home.myNameIs': string;
@@ -20,6 +21,11 @@ export type TranslationDict = {
  // Projects
  'projects.title': string;
  'projects.subtitle': string;
+ //Certifications
+ 'certifications.title': string;
+ 'certifications.subtitle': string;
+ 'certificates.issuer': string; 
+  'certificates.verify': string;
  
   // --- CHAVES NOVAS ADICIONADAS AQUI ---
  'projects.item.nikel.name': string; 
@@ -77,6 +83,7 @@ export const translations: Record<Lang, TranslationDict> = {
   'nav.projects': 'Meus projetos',
   'nav.skills': 'Habilidades',
   'nav.contact': 'Contato',
+  'nav.certifications': 'Certificações',
   // Home
   'home.hello': 'Olá!',
   'home.myNameIs': 'Me chamo',
@@ -90,7 +97,7 @@ export const translations: Record<Lang, TranslationDict> = {
   // Projects
   'projects.title': 'Projetos',
   'projects.subtitle': 'Meus Projetos Principais',
-    // --- VALORES NOVOS ADICIONADOS AQUI ---
+  // --- VALORES NOVOS ADICIONADOS AQUI ---
   'projects.item.nikel.name': 'Nikel - Gestão Financeira',
   'projects.item.nikel.desc': 'Sistema de gestão de finanças pessoais com autenticação de usuário e controle detalhado de transações.',
   'projects.item.batman.name': 'The Batman',
@@ -99,8 +106,7 @@ export const translations: Record<Lang, TranslationDict> = {
   'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
   'projects.item.filmesdev.name': 'Filmes Dev',
   'projects.item.filmesdev.desc': 'Projeto de hub digital em desenvolvimento para fãs de entretenimento, reunindo em uma única plataforma informações detalhadas sobre Filmes, Séries e Animes. O objetivo é criar uma experiência rica e intuitiva para a descoberta de títulos e consulta de dados.',
-
-    // --- FIM VALORES NOVOS ---
+  // --- FIM VALORES NOVOS ---
   'projects.item.bmi.name': 'Calculadora IMC',
   'projects.item.bmi.desc': 'Calcular IMC',
   'projects.deploy': 'Deploy',
@@ -123,6 +129,11 @@ export const translations: Record<Lang, TranslationDict> = {
   'learning.mysql.desc': 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados. Ele permite criar e gerenciar esquemas, executar consultas SQL e visualizar relações entre tabelas de forma intuitiva.',
   'learning.java.desc': 'Java é uma linguagem de programação robusta e orientada a objetos, amplamente utilizada no desenvolvimento de aplicações web, desktop e mobile. Sua principal característica é a portabilidade.',
   'learning.linux.desc': 'O Linux é um sistema operacional de código aberto conhecido por sua estabilidade, segurança e flexibilidade. É amplamente utilizado em servidores, desenvolvimento de software e ambientes de programação, sendo uma das bases mais importantes do ecossistema tecnológico atual.',
+  //Certifications
+  'certifications.title': 'Certificados',
+  'certifications.subtitle': 'Minhas Formações',
+  'certificates.issuer': 'Emissor',
+  'certificates.verify': 'Verificar Certificado',
   // Contact
   'contact.title': 'Contato',
   'contact.subtitle': 'Quer enviar uma mensagem? Preencha o formulário abaixo.',
@@ -142,6 +153,7 @@ export const translations: Record<Lang, TranslationDict> = {
    'nav.projects': 'My projects',
    'nav.skills': 'Skills',
    'nav.contact': 'Contact',
+   'nav.certifications': 'Certifications',
    // Home
    'home.hello': 'Hello!',
    'home.myNameIs': 'My name is',
@@ -155,7 +167,7 @@ export const translations: Record<Lang, TranslationDict> = {
    // Projects
    'projects.title': 'Projects',
    'projects.subtitle': 'My Main Projects',
-     // --- VALORES NOVOS ADICIONADOS AQUI ---
+    // --- VALORES NOVOS ADICIONADOS AQUI ---
     'projects.item.nikel.name': 'Nikel - Financial Management',
     'projects.item.nikel.desc': 'Personal finance management system with user authentication and detailed transaction control.',
     'projects.item.batman.name': 'The Batman',
@@ -164,7 +176,7 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
     'projects.item.filmesdev.name': 'Dev Movies',
      'projects.item.filmesdev.desc': 'Digital hub project in development for entertainment fans, bringing together detailed information about Movies, Series, and Anime on a single platform. The goal is to create a rich and intuitive experience for discovering titles and accessing data.',
-     // --- FIM VALORES NOVOS ---
+    // --- FIM VALORES NOVOS ---
    'projects.item.bmi.name': 'BMI Calculator',
    'projects.item.bmi.desc': 'Calculate BMI',
    'projects.deploy': 'Deploy',
@@ -189,6 +201,11 @@ export const translations: Record<Lang, TranslationDict> = {
    'learning.mysql.desc': 'MySQL Workbench is the official MySQL graphical tool used for database modeling, development, and administration. It allows you to create and manage schemas, run SQL queries, and visualize table relationships intuitively.',
    'learning.java.desc': 'Java is a robust, object-oriented programming language widely used for web, desktop, and mobile applications. Its main feature is portability.',
    'learning.linux.desc': 'Linux is an open-source operating system known for its stability, security, and flexibility. It is widely used in servers, software development, and programming environments, being one of the most important foundations of today\'s tech ecosystem.',
+   //Certifications
+   'certifications.title': 'Certificates',
+   'certifications.subtitle': 'My Certifications',
+   'certificates.issuer': 'Issuer',
+   'certificates.verify': 'Verify Certificate',
    // Contact
    'contact.title': 'Contact',
    'contact.subtitle': 'Want to send a message? Fill out the form below.',
