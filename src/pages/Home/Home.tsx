@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
-import { IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5'; 
+import { IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5';
 import imagee from '../../assets/eliasss.png'
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
       className="bg-[var(--body-bg)] min-h-[88vh] px-6 md:px-10 py-8 pb-12"
     >
       <div className="mx-auto max-w-6xl w-full flex flex-col-reverse md:flex-row items-center justify-center gap-6 md:gap-16 lg:gap-24">
-        
+
         {/* Texto */}
         <motion.div
           initial="hidden"
@@ -52,25 +52,27 @@ const Home = () => {
           </motion.p>
 
           <div className="flex gap-4 md:gap-5 py-5">
-            <a 
-              href="https://github.com/Elias700?tab=overview&from=2025-09-01&to=2025-09-24" 
+            <a
+              href="https://www.linkedin.com/in/elias-ribeiro700/"
               target="blanck"
             >
               <IoLogoLinkedin size={50} className="text-3xl md:text-4xl text-[var(--primary-500)] 
-              hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer" 
-            />
+              hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer"
+              />
             </a>
 
-            <a href="https://www.linkedin.com/in/elias-ribeiro700/" target="blanck">
+            <a href="https://github.com/Elias700" target="blanck">
               <IoLogoGithub size={50} className="text-3xl md:text-4xl text-[var(--primary-500)] 
-              hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer" 
-            />
+              hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer"
+              />
             </a>
 
-            <a href="">
-              <IoMailOutline size={55} className="text-3xl md:text-4xl text-[var(--primary-500)] 
-              hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer" 
-            />
+            <a href="mailto:elias_ribeiro07@outlook.com.br">
+              <IoMailOutline 
+                size={55} 
+                className="text-3xl md:text-4xl text-[var(--primary-500)] 
+                hover:text-[var(--text-muted)] transition duration-[600ms] cursor-pointer"
+              />
             </a>
           </div>
 
@@ -86,7 +88,7 @@ const Home = () => {
               <div className="absolute inset-0 flex h-full w-full justify-center 
               [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000
               group-hover/button:[transform:skew(-13deg)_translateX(100%)]"
-            >
+              >
                 <div className="relative h-full w-10 bg-[var(--primary-500)]"></div>
               </div>
             </a>
