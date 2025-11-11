@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaGlobe } from 'react-icons/fa';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
-import Logo from '../../assets/logo-elias-removebg-preview.png';
+import Logo from '/logo-elias.png'
 
 export default function Header() {
   const { t, setLang, lang } = useTranslation();

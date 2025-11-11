@@ -1,4 +1,4 @@
-import Logo from '../../assets/logo-elias-removebg-preview.png'
+import Logo from '/logo-elias.png'
 import { 
     FaPhone, FaMapMarkerAlt, FaEnvelope,
     FaLinkedinIn, FaGithub
