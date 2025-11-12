@@ -72,7 +72,7 @@ const ProjectCard = ({
                         href={deployUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="select-none rounded-lg bg-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[var(--primary-500)]/20 transition-all hover:bg-[var(--primary-400)] hover:shadow-lg hover:shadow-[var(--primary-400)]/40 focus:opacity-90 active:opacity-90"
+                        className="select-none rounded-lg bg-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase text-[var(--primary-50)] shadow-md shadow-[var(--primary-500)]/20 transition-all hover:bg-[var(--primary-700)] hover:shadow-lg hover:shadow-[var(--primary-400)]/40 focus:opacity-90 active:opacity-90"
                     >
                         {t('projects.deploy')}
                     </a>
@@ -85,7 +85,7 @@ const ProjectCard = ({
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="select-none rounded-lg border border-[var(--primary-500)] text-[var(--primary-400)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase bg-transparent hover:bg-[var(--primary-800)] hover:text-white transition-all duration-300"
+                        className="select-none rounded-lg border border-[var(--primary-500)] text-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase bg-transparent hover:bg-[var(--primary-800)] hover:text-white transition-all duration-300"
                     >
                         {t('projects.github')}
                     </a>

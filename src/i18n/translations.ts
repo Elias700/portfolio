@@ -95,9 +95,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.subtitle': 'Meus Projetos Principais',
     // --- VALORES NOVOS ADICIONADOS AQUI ---
     'projects.item.nikel.name': 'Nikel - Gestão Financeira',
-    'projects.item.nikel.desc': 'Sistema de gestão de finanças pessoais com autenticação de usuário e controle detalhado de transações.',
+    'projects.item.nikel.desc': 'Sistema completo de gestão financeira com autenticação de usuários, permitindo controle detalhado de transações, análise de gastos e acompanhamento inteligente do orçamento.',
     'projects.item.batman.name': 'The Batman',
-    'projects.item.batman.desc': 'Site inspirado no filme The Batman, criado para fornecer informações sobre o longa e permitir que os usuários simulem a compra de ingressos.',
+    'projects.item.batman.desc': 'Site inspirado no filme The Batman, oferecendo informações detalhadas sobre o longa, curiosidades e elenco, além de permitir a simulação interativa da compra de ingressos.',
     'projects.item.rotadomar.name': 'Rota do Mar',
     'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
     'projects.item.filmesdev.name': 'Filmes Dev',
@@ -165,9 +165,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.subtitle': 'My Main Projects',
     // --- VALORES NOVOS ADICIONADOS AQUI ---
     'projects.item.nikel.name': 'Nikel - Financial Management',
-    'projects.item.nikel.desc': 'Personal finance management system with user authentication and detailed transaction control.',
+    'projects.item.nikel.desc': 'Complete financial management system with user authentication, allowing detailed transaction control, expense analysis, and smart budget tracking.',
     'projects.item.batman.name': 'The Batman',
-    'projects.item.batman.desc': 'Website inspired by the movie The Batman, created to provide information about the film and allow users to simulate ticket purchases.',
+    'projects.item.batman.desc': 'Website inspired by the movie The Batman, offering detailed information about the film, trivia, and cast, as well as allowing an interactive ticket purchase simulation.',
     'projects.item.rotadomar.name': 'Rota do Mar',
     'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
     'projects.item.filmesdev.name': 'Dev Movies',

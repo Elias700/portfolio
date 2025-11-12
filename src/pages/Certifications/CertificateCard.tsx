@@ -63,7 +63,7 @@ const CertificateCard: React.FC<CertificateProps> = ({
             <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0 flex gap-10 justify-between items-center mt-auto">
                 <button
                     onClick={() => onVerifyClick(fullCertificateUrl)}
-                    className="min-w-[160px] select-none rounded-lg bg-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-[var(--primary-500)]/20 transition-all hover:bg-[var(--primary-400)] hover:shadow-lg hover:shadow-[var(--primary-400)]/40 focus:opacity-90 active:opacity-90 cursor-pointer"
+                    className="min-w-[160px] select-none rounded-lg bg-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase text-[var(--primary-50)] shadow-md shadow-[var(--primary-500)]/20 transition-all hover:bg-[var(--primary-700)] hover:shadow-lg hover:shadow-[var(--primary-400)]/40 focus:opacity-90 active:opacity-90 cursor-pointer"
                 >
                     {t('certificates.verify') || 'Verificar Certificado'}
                 </button>

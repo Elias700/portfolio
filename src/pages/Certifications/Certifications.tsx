@@ -155,7 +155,7 @@ const Certifications = () => {
                         />
                         {/* Botão de Fechar */}
                         <button
-                            className="absolute top-2 right-2 text-red-700 text-4xl font-bold bg-transparent border-none p-2 cursor-pointer transition hover:text-[var(--primary-500)]"
+                            className="absolute top-2 right-2 text-[var(--error)] text-4xl font-bold bg-transparent border-none p-2 cursor-pointer transition hover:text-[var(--primary-500)]"
                             onClick={closeModal}
                         >
                             &times;
