@@ -1,24 +1,43 @@
-import { motion } from "framer-motion";
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 import { IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5';
 import imagee from '../../assets/eliasss.png'
+// Importe o CSS local se ele contiver a classe 'animate-float'
+// import './Home.css'; 
+
+// Importe o Hook para o Scroll Reveal (ajuste o caminho se necessário)
+import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
 
 const Home = () => {
   const { t } = useTranslation();
 
-  // Variantes para o texto
-  const textVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  // 1. Hook para o bloco de TEXTO (dispara quando 80% da tela está visível)
+  // Especificando o tipo <HTMLDivElement>
+  const { elementRef: textRef, isVisible: textVisible } = useScrollVisibility<HTMLDivElement>(0.8);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3 },
-    },
-  };
+  // 2. Hook para o bloco de IMAGEM (dispara quando 60% da tela está visível)
+  // Especificando o tipo <HTMLDivElement> (já que a ref é colocada na div wrapper da imagem)
+  const { elementRef: imageRef, isVisible: imageVisible } = useScrollVisibility<HTMLDivElement>(0.6);
+
+  // === Classes Dinâmicas do Tailwind para o Scroll Reveal ===
+
+  // Slide-in da Esquerda para o Texto
+  const textAnimationClasses = `
+    transition-all duration-1000 ease-out 
+    ${textVisible
+      ? 'opacity-100 translate-x-0' // Estado Visível
+      : 'opacity-0 -translate-x-1/2'} // Estado Inicial Oculto
+  `;
+
+  // Fade-up para a Imagem + Float Contínuo
+  const imageAnimationClasses = `
+    transition-all duration-1000 ease-out delay-300
+    ${imageVisible
+      ? 'opacity-100 translate-y-0' // Estado Visível
+      : 'opacity-0 translate-y-12'} // Estado Inicial Oculto (12px para baixo)
+  `;
+
+  // A classe 'animate-float' deve vir do seu CSS (style.css)
+  const imageFloatClass = 'animate-float';
 
   return (
     <section
@@ -27,29 +46,26 @@ const Home = () => {
     >
       <div className="mx-auto max-w-6xl w-full flex flex-col-reverse md:flex-row items-center justify-center gap-6 md:gap-16 lg:gap-24">
 
-        {/* Texto */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="max-w-xl w-full"
+        {/* 1. TEXTO: Adiciona a Ref e as classes dinâmicas */}
+        <div
+          ref={textRef} // <-- Ref do tipo HTMLDivElement
+          className={`max-w-xl w-full ${textAnimationClasses}`}
         >
-          <motion.p className="text-2xl md:text-3xl lg:text-4xl text-[var(--hero-text)]" variants={textVariants}>
+          <p className="text-2xl md:text-3xl lg:text-4xl text-[var(--hero-text)]">
             <strong className="text-3xl md:text-4xl lg:text-5xl text-[var(--hero-text)]">{t('home.hello')}</strong>
             {t('home.myNameIs')}
-          </motion.p>
+          </p>
 
-          <motion.h2
+          <h2
             className="text-4xl md:text-6xl lg:text-7xl bg-gradient-to-bl from-[var(--primary-300)]
             via-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent"
-            variants={textVariants}
           >
             Elias Ribeiro
-          </motion.h2>
+          </h2>
 
-          <motion.p className="text-2xl md:text-3xl lg:text-4xl text-[var(--hero-text)]" variants={textVariants}>
+          <p className="text-2xl md:text-3xl lg:text-4xl text-[var(--hero-text)]">
             {t('home.role')}
-          </motion.p>
+          </p>
 
           <div className="flex gap-4 md:gap-5 py-5">
             <a
@@ -77,35 +93,19 @@ const Home = () => {
               />
             </a>
           </div>
+        </div>
 
-
-        </motion.div>
-
-        {/* Imagem com efeito de subir e descer */}
-        <motion.div
-          className="relative flex justify-center items-center w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: 1,
-            y: [0, -12], // movimento de sobe e desce
-          }}
-          transition={{
-            opacity: { duration: 0.9, ease: "easeOut" },
-            y: {
-              duration: 2.2,
-              ease: "linear",
-              repeat: Infinity,
-              repeatType: "reverse",
-              repeatDelay: 0,
-            },
-          }}
+        {/* 2. IMAGEM: Adiciona a Ref, as classes dinâmicas e o float contínuo */}
+        <div
+          ref={imageRef} // <-- Ref do tipo HTMLDivElement
+          className={`relative flex justify-center items-center w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl ${imageAnimationClasses} ${imageFloatClass}`}
         >
           <img
             src={imagee}
             alt="Elias Ribeiro"
             className="relative z-10 w-56 sm:w-72 md:w-[22rem] lg:w-[28rem] h-auto object-contain"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

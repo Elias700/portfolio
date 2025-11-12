@@ -41,14 +41,6 @@ const Projects = () => {
       deployUrl: "",
       githubUrl: ""
     },
-    { 
-      id: 5, 
-      name: t('projects.item.bmi.name'), 
-      description: t('projects.item.bmi.desc'), 
-      imageUrl: ProjetoEmAndamento,
-      deployUrl: "",
-      githubUrl: ""
-    },
   ];
 
   return (

@@ -14,26 +14,26 @@
   --text-muted: #AAAFae;
 
   /* === Typographic accents (Dark) === */
-  --heading-color: var(--primary-500); 	
-  --subtitle-color: #E6FFF7; 			
-  --hero-text: #CBCCD1; 				
+  --heading-color: var(--primary-500);
+  --subtitle-color: #E6FFF7;
+  --hero-text: #CBCCD1;
 
   /* === Card text defaults (Dark) === */
   --card-title-color: #eef4f2;
   --card-desc-color: #aaafae;
-  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.30);
+  --card-title-shadow: 0 1px 0 rgba(0, 0, 0, 0.30);
 
-  --primary-50: #E6FFF7; 	
-  --primary-100: #B3FFE3; 	
-  --primary-200: #80FFD0; 	
-  --primary-300: #4DFFBC; 	
-  --primary-400: #1AFFA8; 	
-  --primary-500: #00B58C; 	
-  --primary-600: #009473; 
-  --primary-700: #00735A; 	
-  --primary-800: #005242; 	
-  --primary-900: #00312A; 	
-  
+  --primary-50: #E6FFF7;
+  --primary-100: #B3FFE3;
+  --primary-200: #80FFD0;
+  --primary-300: #4DFFBC;
+  --primary-400: #1AFFA8;
+  --primary-500: #00B58C;
+  --primary-600: #009473;
+  --primary-700: #00735A;
+  --primary-800: #005242;
+  --primary-900: #00312A;
+
   /* === Variável de Hover (Dark) === */
   --hover-bg: #2b3347;
 
@@ -48,22 +48,22 @@
   --body-bg: #F5F7FB;
   --header-bg: #FFFFFF;
   --section-bg: #F5F7FB;
-  --card-bg: #E9EEF5; 
+  --card-bg: #E9EEF5;
   --text-primary: #1F2937;
   --text-muted: #475569;
-  
+
   /* === Variável de Hover (Light) === */
   --hover-bg: #d9dde4;
 
   /* === Typographic accents (Light) === */
-  --heading-color: #0B6B58; 	
-  --subtitle-color: #1F2937; 
-  --hero-text: #CBCCD1; 		
+  --heading-color: #0B6B58;
+  --subtitle-color: #1F2937;
+  --hero-text: #CBCCD1;
 
   /* === Card text tweaks (Light) === */
-  --card-title-color: #1F2937; 
-  --card-desc-color: #475569; 	
-  --card-title-shadow: 0 1px 0 rgba(0,0,0,0.12); 
+  --card-title-color: #1F2937;
+  --card-desc-color: #475569;
+  --card-title-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
 
   /* Adjusted brand tones for visibility in light mode */
   --primary-50: #E9FFF8;
@@ -71,7 +71,8 @@
   --primary-200: #91FCD7;
   --primary-300: #65FAC6;
   --primary-400: #39F8B6;
-  --primary-500: #00B58C; /* Principal */
+  --primary-500: #00B58C;
+  /* Principal */
   --primary-600: #009475;
   --primary-700: #00735E;
   --primary-800: #005247;
@@ -94,7 +95,7 @@ body {
   background-color: var(--body-bg);
 }
 
-main > div[id] {
+main>div[id] {
   scroll-margin-top: var(--header-height);
 }
 
@@ -108,4 +109,45 @@ h2 {
 
 p {
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* -------------------------------------- */
+/* === Animações Globais (Puro CSS) === */
+/* -------------------------------------- */
+
+/* Keyframes para o efeito Float (Sobe e Desce) */
+@keyframes float-animation {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Keyframes para o Slide-in da Esquerda */
+@keyframes slide-in-left-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Classe Reutilizável para o Efeito de Float Contínuo */
+.animate-float {
+  animation: float-animation 4s ease-in-out infinite alternate;
+}
+
+/* Classe Reutilizável para o Slide-in ao Carregar (Útil para simular o 'initial' do framer-motion) */
+/* **AVISO**: Para Scroll Reveal, use o JavaScript (useScrollVisibility) e classes Tailwind (transition, opacity-0) */
+.animate-slide-in-left-on-load {
+  animation: slide-in-left-animation 1s ease-out forwards;
 }
