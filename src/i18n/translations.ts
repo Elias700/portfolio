@@ -57,7 +57,7 @@ export type TranslationDict = {
   'learning.subtitle': string;
   'learning.mysql.desc': string;
   'learning.java.desc': string;
-  'learning.linux.desc': string;
+  'learning.apirest.desc': string,
   // Contact
   'contact.title': string;
   'contact.subtitle': string;
@@ -122,9 +122,9 @@ export const translations: Record<Lang, TranslationDict> = {
     // LearningSkills
     'learning.title': 'Habilidades',
     'learning.subtitle': 'Habilidades em aprendizado',
-    'learning.mysql.desc': 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados. Ele permite criar e gerenciar esquemas, executar consultas SQL e visualizar relações entre tabelas de forma intuitiva.',
+    'learning.mysql.desc': 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados.',
     'learning.java.desc': 'Java é uma linguagem de programação robusta e orientada a objetos, amplamente utilizada no desenvolvimento de aplicações web, desktop e mobile. Sua principal característica é a portabilidade.',
-    'learning.linux.desc': 'O Linux é um sistema operacional de código aberto conhecido por sua estabilidade, segurança e flexibilidade. É amplamente utilizado em servidores, desenvolvimento de software e ambientes de programação, sendo uma das bases mais importantes do ecossistema tecnológico atual.',
+    'learning.apirest.desc': 'Uma API REST é uma interface de comunicação que permite a interação entre sistemas através de requisições HTTP, utilizando princípios da arquitetura REST.',
     //Certifications
     'certifications.title': 'Certificados',
     'certifications.subtitle': 'Minhas Formações',
@@ -192,9 +192,9 @@ export const translations: Record<Lang, TranslationDict> = {
     // LearningSkills
     'learning.title': 'Skills',
     'learning.subtitle': 'Skills I\'m learning',
-    'learning.mysql.desc': 'MySQL Workbench is the official MySQL graphical tool used for database modeling, development, and administration. It allows you to create and manage schemas, run SQL queries, and visualize table relationships intuitively.',
+    'learning.mysql.desc': 'MySQL Workbench is the official MySQL graphical tool used for database modeling, development, and administration.',
     'learning.java.desc': 'Java is a robust, object-oriented programming language widely used for web, desktop, and mobile applications. Its main feature is portability.',
-    'learning.linux.desc': 'Linux is an open-source operating system known for its stability, security, and flexibility. It is widely used in servers, software development, and programming environments, being one of the most important foundations of today\'s tech ecosystem.',
+    'learning.apirest.desc': 'A REST API is a communication interface that allows interaction between systems through HTTP requests, using principles of REST architecture.',
     //Certifications
     'certifications.title': 'Certificates',
     'certifications.subtitle': 'My Certifications',

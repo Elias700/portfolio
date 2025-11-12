@@ -5,65 +5,48 @@ import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
 const About = () => {
   const { t } = useTranslation();
 
-  // 1. TÍTULO: (div) - Ativação no 90% da tela (dispara cedo)
-  const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.9);
+  const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.95);
+  const { elementRef: textRef, isVisible: textVisible } = useScrollVisibility<HTMLDivElement>(0.85);
+  const { elementRef: imageRef, isVisible: imageVisible } = useScrollVisibility<HTMLImageElement>(0.8);
 
-  // 2. TEXTO/BOTÃO: (div) - Ativação no 70% da tela (Slide-in da Esquerda)
-  // Tipagem explícita como HTMLDivElement
-  const { elementRef: textRef, isVisible: textVisible } = useScrollVisibility<HTMLDivElement>(0.7);
+  const whatsappUrl = "https://wa.me/5571984231897?text=Ol%C3%A1%2C%20vim%20do%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.";
 
-  // 3. IMAGEM: (img) - Ativação no 60% da tela (Slide-in da Direita)
-  // Tipagem explícita como HTMLImageElement
-  const { elementRef: imageRef, isVisible: imageVisible } = useScrollVisibility<HTMLImageElement>(0.6);
-
-  // URL do WhatsApp com seu número e mensagem de rascunho codificada
-  const whatsappUrl = "https://wa.me/5571984231897?text=Ol%C3%A1%2C%20vim%20do%20portfólio%20e%20gostaria%20de%20conversar.";
-
-  // === Classes de Animação Tailwind ===
-
-  // Animação para o Título (Fade-up suave)
   const titleAnimationClasses = `
     transition-all duration-700 ease-out 
     ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
   `;
 
-  // Animação para o Bloco de Texto (Slide-in da Esquerda)
   const textAnimationClasses = `
     transition-all duration-1000 ease-out delay-200
-    ${textVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}
+    ${textVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
   `;
 
-  // Animação para a Imagem (Slide-in da Direita)
   const imageAnimationClasses = `
     transition-all duration-1000 ease-out delay-300
-    ${imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}
+    ${imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}
   `;
 
   return (
-    <div
-      className="relative min-h-[90vh] pb-8 md:pb-12 mb-6 md:mb-10 overflow-hidden bg-[--body-bg]"
-    >
-      {/* TÍTULO: Aplica a ref e as classes de animação */}
+    <div className="relative min-h-[90vh] pb-8 md:pb-12 mb-6 md:mb-10 overflow-hidden bg-[--body-bg]">
+
       <div
-        ref={titleRef} // <-- Ref do Título (HTMLDivElement)
-        className={`p-10 ${titleAnimationClasses}`}
+        ref={titleRef}
+        className={`p-10 text-center ${titleAnimationClasses}`}
       >
-        <h2 className="text-center text-3xl text-[var(--heading-color)]">{t('about.title')}</h2>
-        <h1 className="text-center text-7xl text-[var(--subtitle-color)]">{t('about.subtitle')}</h1>
+        <h2 className="text-3xl text-[var(--heading-color)]">{t('about.title')}</h2>
+        <h1 className="text-6xl md:text-7xl text-[var(--subtitle-color)]">{t('about.subtitle')}</h1>
       </div>
 
       <section className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 p-6 md:p-10">
 
-        {/* BLOCO DE TEXTO E BOTÃO: Aplica a ref e as classes de animação */}
         <div
-          ref={textRef} // <-- Ref do Texto (HTMLDivElement)
-          className={`max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10 ${textAnimationClasses}`}
+          ref={textRef}
+          className={`max-w-lg rounded-2xl flex flex-col justify-center items-center gap-10 text-center ${textAnimationClasses}`}
         >
-          <p className="bg-transparent text-[var(--text-primary)] text-lg text-center">
+          <p className="bg-transparent text-[var(--text-primary)] text-lg leading-relaxed">
             {t('about.paragraph')}
           </p>
 
-          {/* O elemento <a> (Botão) */}
           <a
             href={whatsappUrl}
             target="_blank"
@@ -76,12 +59,10 @@ const About = () => {
           </a>
         </div>
 
-        {/* IMAGEM: Aplica a ref e as classes de animação */}
         <img
-          ref={imageRef} // <-- Ref da Imagem (HTMLImageElement)
+          ref={imageRef}
           src={image}
           alt="Elias Ribeiro"
-          // Adicionamos classes de TRANSITION e HOVER do Tailwind para substituir o whileHover
           className={`w-64 sm:w-72 md:w-80 lg:w-96 h-auto rounded-lg transition-transform duration-300 hover:scale-105 hover:cursor-pointer ${imageAnimationClasses}`}
         />
       </section>
