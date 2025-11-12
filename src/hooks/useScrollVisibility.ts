@@ -1,42 +1,36 @@
-// src/hooks/useScrollVisibility.ts
-
 import { useState, useEffect, useRef } from 'react';
-import type { RefObject } from 'react'; // Importa o tipo RefObject para clareza
+import type { RefObject } from 'react';
 
 /**
- * Hook customizado para detectar quando um elemento HTML entra no viewport durante a rolagem.
- * @param threshold O ponto de visibilidade (0.0 a 1.0) para acionar o efeito.
- * @returns Um objeto contendo a referência (Ref) para o elemento e um booleano de visibilidade.
+ * Hook que detecta quando um elemento entra no viewport (visível na rolagem)
+ * Usa IntersectionObserver, com threshold e rootMargin opcionais.
  */
-// T é o tipo genérico, que deve estender HTMLElement (ex: HTMLDivElement, HTMLImageElement)
-const useScrollVisibility = <T extends HTMLElement>(threshold = 0.8) => {
-    const [isVisible, setIsVisible] = useState(false);
-    // A Ref agora é do tipo genérico T
-    const elementRef = useRef<T>(null);
+const useScrollVisibility = <T extends HTMLElement>(
+  threshold: number = 0.8,
+  rootMargin: string = '0px'
+) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef<T | null>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // Usamos elementRef.current, que terá o tipo T
-            if (elementRef.current && !isVisible) {
-                const { top } = elementRef.current.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
 
-                if (top < windowHeight * threshold) {
-                    setIsVisible(true);
-                }
-            }
-        };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // ✅ só observa uma vez
+        }
+      },
+      { threshold, rootMargin }
+    );
 
-        handleScroll();
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [threshold, rootMargin]);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [isVisible, threshold]);
-
-    // Forçamos o retorno da RefObject<T> para que seja compatível com a tipagem do React
-    return { elementRef: elementRef as RefObject<T>, isVisible };
+  return { elementRef: elementRef as RefObject<T>, isVisible };
 };
 
 export default useScrollVisibility;

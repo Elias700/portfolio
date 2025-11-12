@@ -1,5 +1,6 @@
 import { DiMysql, DiJava, DiLinux } from "react-icons/di";
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
+import useScrollVisibility from '../../hooks/useScrollVisibility.ts'; // Importe o Hook
 
 const LearningSkills = () => {
     const { t } = useTranslation();
@@ -16,22 +17,59 @@ const LearningSkills = () => {
         { title: 'Linux', description: t('learning.linux.desc'), icon: DiLinux }
     ];
 
+    // 1. Hook para o TÍTULO (dispara cedo)
+    const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.8);
+
+    // === Classes de Animação Tailwind para o TÍTULO ===
+    const titleAnimationClasses = `
+      transition-all duration-700 ease-out 
+      ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+    `;
+    
+    // Hook individual para cada card de skill
+    const cardRefs = skills.map(() => useScrollVisibility<HTMLDivElement>(0.6));
+
+
     return (
         <main className='mt-16 md:mt-24 bg-[var(--body-bg)]'>
-            <div className='px-6 py-4 md:p-5'>
+            {/* TÍTULO: Aplica a ref e as classes de animação */}
+            <div 
+                ref={titleRef} 
+                className={`px-6 py-4 md:p-5 ${titleAnimationClasses}`}
+            >
                 <h2 className='text-center text-2xl md:text-3xl text-[var(--heading-color)]'>{t('learning.title')}</h2>
                 <h1 className='text-center text-4xl md:text-6xl lg:text-7xl text-[var(--subtitle-color)]'>{t('learning.subtitle')}</h1>
             </div>
+            
             <section className='flex flex-wrap justify-center gap-6 md:gap-10 lg:gap-16 px-4 md:px-6 p-10'>
-                {skills.map((skill) => (
-                    <div key={skill.title} className='rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] bg-[var(--card-bg)]'>
-                        <div className='flex flex-col items-center p-6 md:p-8 lg:p-10 w-full sm:w-72 md:w-80 text-center cursor-pointer'>
-                            <skill.icon size={44} color="#00B58C" />
-                            <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{skill.title}</h3>
-                            <p className='text-[var(--card-desc-color)] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{skill.description}</p>
+                {skills.map((skill, index) => {
+                    const { elementRef, isVisible } = cardRefs[index];
+                    const staggerDelay = index * 100;
+
+                    const cardAnimationClasses = `
+                        transition-all duration-700 ease-out 
+                        ${isVisible 
+                          ? `opacity-100 translate-y-0 delay-[${staggerDelay}ms]` 
+                          : 'opacity-0 translate-y-10'}
+                    `;
+
+                    return (
+                        <div 
+                            key={skill.title} 
+                            ref={elementRef} // <-- Anexa a Ref
+                            className={`
+                                rounded-2xl transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C] bg-[var(--card-bg)]
+                                ${cardAnimationClasses}
+                            `}
+                        >
+                            <div className='flex flex-col items-center p-6 md:p-8 lg:p-10 w-full sm:w-72 md:w-80 text-center cursor-pointer'>
+                                <skill.icon size={44} color="#00B58C" />
+                                <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{skill.title}</h3>
+                                <p className='text-[var(--card-desc-color)] text-sm md:text-base' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{skill.description}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </section>
         </main>
     )
