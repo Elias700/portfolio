@@ -33,8 +33,8 @@ export type TranslationDict = {
   'projects.item.batman.desc': string;
   'projects.item.rotadomar.name': string;
   'projects.item.rotadomar.desc': string;
-  'projects.item.filmesdev.name': string;
-  'projects.item.filmesdev.desc': string;
+  'projects.item.moneytrack.name': string;
+  'projects.item.moneytrack.desc': string;
   // --- FIM CHAVES NOVAS ---
   'projects.item.bmi.name': string;
   'projects.item.bmi.desc': string;
@@ -100,8 +100,8 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.batman.desc': 'Site inspirado no filme The Batman, oferecendo informações detalhadas sobre o longa, curiosidades e elenco, além de permitir a simulação interativa da compra de ingressos.',
     'projects.item.rotadomar.name': 'Rota do Mar',
     'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
-    'projects.item.filmesdev.name': 'Filmes Dev',
-    'projects.item.filmesdev.desc': 'Projeto de hub digital em desenvolvimento para fãs de entretenimento, reunindo em uma única plataforma informações detalhadas sobre Filmes, Séries e Animes. O objetivo é criar uma experiência rica e intuitiva para a descoberta de títulos e consulta de dados.',
+    'projects.item.moneytrack.name': 'Money Track',
+    'projects.item.moneytrack.desc': 'Aplicativo de acompanhamento financeiro em desenvolvimento, focado em capacitar os usuários a gerenciar seu dinheiro com clareza e controle. A plataforma centraliza despesas, categorias, histórico e insights, oferecendo uma experiência intuitiva e organizada para monitorar as finanças e melhorar o orçamento.',
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'Calculadora IMC',
     'projects.item.bmi.desc': 'Calcular IMC',
@@ -170,8 +170,8 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.batman.desc': 'Website inspired by the movie The Batman, offering detailed information about the film, trivia, and cast, as well as allowing an interactive ticket purchase simulation.',
     'projects.item.rotadomar.name': 'Rota do Mar',
     'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
-    'projects.item.filmesdev.name': 'Dev Movies',
-    'projects.item.filmesdev.desc': 'Digital hub project in development for entertainment fans, bringing together detailed information about Movies, Series, and Anime on a single platform. The goal is to create a rich and intuitive experience for discovering titles and accessing data.',
+    'projects.item.moneytrack.name': 'Money Track',
+    'projects.item.moneytrack.desc': 'Financial tracking app in development focused on empowering users to manage their money with clarity and control. The platform centralizes expenses, categories, history, and insights, delivering an intuitive and organized experience for monitoring finances and improving budgeting.',
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'BMI Calculator',
     'projects.item.bmi.desc': 'Calculate BMI',

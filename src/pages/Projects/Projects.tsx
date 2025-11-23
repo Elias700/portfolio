@@ -5,6 +5,7 @@ import Batman from '../../assets/projeto-batman.png';
 import RotaDoMar from '../../assets/projeto-rotadomar.png';
 import ProjetoEmAndamento from '../../assets/projetoEmAndamento.png';
 import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
+import MoneyTrack from '../../assets/projeto-moneyTrack.png'
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -44,11 +45,11 @@ const Projects = () => {
     },
     {
       id: 4,
-      name: t('projects.item.filmesdev.name'),
-      description: t('projects.item.filmesdev.desc'),
+      name: t('projects.item.moneytrack.name'),
+      description: t('projects.item.moneytrack.desc'),
       imageUrl: ProjetoEmAndamento,
       deployUrl: '',
-      githubUrl: '',
+      githubUrl: 'https://github.com/Elias700/MoneyTrack',
     },
   ];
 
