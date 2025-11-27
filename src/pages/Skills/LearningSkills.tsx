@@ -2,6 +2,7 @@ import { DiMysql, DiJava } from "react-icons/di";
 import { FaNetworkWired } from 'react-icons/fa';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
+import { FaCubes } from 'react-icons/fa';
 
 const LearningSkills = () => {
     const { t } = useTranslation();
@@ -15,7 +16,8 @@ const LearningSkills = () => {
     const skills: Skills[] = [
         { title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql },
         { title: 'Java', description: t('learning.java.desc'), icon: DiJava },
-        { title: 'Api Rest', description: t('learning.apirest.desc'), icon: FaNetworkWired }
+        { title: 'Api Rest', description: t('learning.apirest.desc'), icon: FaNetworkWired },
+        { title: 'POO', description: t('learning.poo.desc'), icon: FaCubes }
     ];
 
     const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.8);

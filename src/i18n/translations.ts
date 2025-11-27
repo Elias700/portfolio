@@ -58,6 +58,7 @@ export type TranslationDict = {
   'learning.mysql.desc': string;
   'learning.java.desc': string;
   'learning.apirest.desc': string,
+  'learning.poo.desc': string;
   // Contact
   'contact.title': string;
   'contact.subtitle': string;
@@ -125,6 +126,7 @@ export const translations: Record<Lang, TranslationDict> = {
     'learning.mysql.desc': 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados.',
     'learning.java.desc': 'Java é uma linguagem de programação robusta e orientada a objetos, amplamente utilizada no desenvolvimento de aplicações web, desktop e mobile. Sua principal característica é a portabilidade.',
     'learning.apirest.desc': 'Uma API REST é uma interface de comunicação que permite a interação entre sistemas através de requisições HTTP, utilizando princípios da arquitetura REST.',
+    'learning.poo.desc': 'A Programação Orientada a Objetos é um paradigma que organiza o código em torno de objetos, que são instâncias de classes e contêm dados (atributos) e comportamentos (métodos).',
     //Certifications
     'certifications.title': 'Certificados',
     'certifications.subtitle': 'Minhas Formações',
@@ -195,6 +197,7 @@ export const translations: Record<Lang, TranslationDict> = {
     'learning.mysql.desc': 'MySQL Workbench is the official MySQL graphical tool used for database modeling, development, and administration.',
     'learning.java.desc': 'Java is a robust, object-oriented programming language widely used for web, desktop, and mobile applications. Its main feature is portability.',
     'learning.apirest.desc': 'A REST API is a communication interface that allows interaction between systems through HTTP requests, using principles of REST architecture.',
+    'learning.poo.desc': 'Object-Oriented Programming is a paradigm that organizes code around objects, which are instances of classes and contain data (attributes) and behaviors (methods).',
     //Certifications
     'certifications.title': 'Certificates',
     'certifications.subtitle': 'My Certifications',
