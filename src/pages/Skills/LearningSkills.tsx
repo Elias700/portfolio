@@ -3,6 +3,8 @@ import { FaNetworkWired } from 'react-icons/fa';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
 import { FaCubes } from 'react-icons/fa';
+import { SiIntellijidea } from "react-icons/si";
+
 
 const LearningSkills = () => {
     const { t } = useTranslation();
@@ -17,7 +19,8 @@ const LearningSkills = () => {
         { title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql },
         { title: 'Java', description: t('learning.java.desc'), icon: DiJava },
         { title: 'Api Rest', description: t('learning.apirest.desc'), icon: FaNetworkWired },
-        { title: 'POO', description: t('learning.poo.desc'), icon: FaCubes }
+        { title: 'POO', description: t('learning.poo.desc'), icon: FaCubes },
+        { title: 'IntelliJ IDEA', description: t('projects.item.intellij.desc'), icon: SiIntellijidea },
     ];
 
     const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.8);

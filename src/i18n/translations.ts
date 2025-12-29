@@ -35,6 +35,8 @@ export type TranslationDict = {
   'projects.item.rotadomar.desc': string;
   'projects.item.moneytrack.name': string;
   'projects.item.moneytrack.desc': string;
+  'projects.item.intellij.name': string;
+  'projects.item.intellij.desc': string;
   // --- FIM CHAVES NOVAS ---
   'projects.item.bmi.name': string;
   'projects.item.bmi.desc': string;
@@ -103,6 +105,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
     'projects.item.moneytrack.name': 'Money Track',
     'projects.item.moneytrack.desc': 'Aplicativo de acompanhamento financeiro em desenvolvimento, focado em capacitar os usuários a gerenciar seu dinheiro com clareza e controle. A plataforma centraliza despesas, categorias, histórico e insights, oferecendo uma experiência intuitiva e organizada para monitorar as finanças e melhorar o orçamento.',
+    'projects.item.intellij.name': 'IntelliJ IDEA',
+    'projects.item.intellij.desc': 'O IntelliJ IDEA é uma IDE poderosa voltada ao desenvolvimento Java e multiplataforma, oferecendo ferramentas avançadas de produtividade, análise de código e suporte a frameworks modernos.',
+
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'Calculadora IMC',
     'projects.item.bmi.desc': 'Calcular IMC',
@@ -174,6 +179,8 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
     'projects.item.moneytrack.name': 'Money Track',
     'projects.item.moneytrack.desc': 'Financial tracking app in development focused on empowering users to manage their money with clarity and control. The platform centralizes expenses, categories, history, and insights, delivering an intuitive and organized experience for monitoring finances and improving budgeting.',
+    'projects.item.intellij.name': 'IntelliJ IDEA',
+    'projects.item.intellij.desc': 'IntelliJ IDEA is a powerful IDE focused on Java and multi-platform development, offering advanced productivity tools, code analysis, and support for modern frameworks.',
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'BMI Calculator',
     'projects.item.bmi.desc': 'Calculate BMI',
