@@ -26,7 +26,7 @@ const ProjectCard = ({
         '0px 0px -10% 0px'
     );
 
-    const staggerDelay = index * 150; // ms
+    const staggerDelay = index * 150;
 
     return (
         <div
@@ -36,14 +36,14 @@ const ProjectCard = ({
                 willChange: 'transform, opacity',
             }}
             className={`
-        relative flex flex-col rounded-xl bg-clip-border shadow-md
-        transition-all duration-700 ease-out transform
-        hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C]
-        bg-[var(--card-bg)]
-        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-      `}
+                relative flex flex-col rounded-xl bg-clip-border shadow-md
+                transition-all duration-700 ease-out transform
+                hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C]
+                bg-[var(--card-bg)]
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+            `}
         >
-            {/* Imagem */}
+
             <div className="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-clip-border shadow-lg aspect-[16/9] sm:aspect-[4/3]">
                 <img
                     src={imageUrl}
@@ -52,7 +52,6 @@ const ProjectCard = ({
                 />
             </div>
 
-            {/* Texto */}
             <div className="px-5 py-4 md:p-6">
                 <h5
                     className="mb-2 block font-sans text-lg md:text-xl font-semibold leading-snug tracking-normal text-[var(--card-title-color)]"
@@ -65,7 +64,6 @@ const ProjectCard = ({
                 </p>
             </div>
 
-            {/* Botões */}
             <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0 flex gap-10 md:gap-10 justify-between">
                 {deployUrl ? (
                     <a

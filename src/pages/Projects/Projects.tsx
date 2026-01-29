@@ -54,7 +54,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative bg-[--body-bg]">
-      {/* Título com animação */}
+      
       <div
         ref={titleRef}
         className={`max-w-6xl mx-auto px-6 py-8 md:px-10 md:py-12 ${titleAnimationClasses}`}
@@ -67,7 +67,6 @@ const Projects = () => {
         </h1>
       </div>
 
-      {/* Cards */}
       <div className="max-w-6xl mx-auto px-4 pb-16 md:px-10 p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 md:gap-14 lg:gap-16 cursor-pointer">
           {projects.map((project, index) => (

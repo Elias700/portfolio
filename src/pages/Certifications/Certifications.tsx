@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CertificateCard from "./CertificateCard";
 import { useTranslation } from "../../i18n/LanguageContext.tsx";
 
-import CertificadoResidencia from '../../assets/CertificationResidencia.png';
+import CertificadoResidenciaFase1 from '../../assets/CertificationResidencia.png';
 import CertificationProfissao from '../../assets/CertificationProfissaoProgramador.png';
 import CertificationHoradecodar from '../../assets/certificationCSS-HoraDeCodar.png';
 import CertificationUnifel from '../../assets/CertificationUnifel.png';
@@ -13,22 +13,19 @@ import CertificationGithub from '../../assets/CertificationGit.png';
 import CertificationAlura from '../../assets/Certification-alura.png';
 import CertificationAlura2 from '../../assets/CertificationAlura2.png';
 import CertificationReact from '../../assets/CertificationReact.png';
+import CertificadoResidenciaFase2 from '../../assets/certificado-cepedi-fase2.png';
 
 const Certifications = () => {
     const { t } = useTranslation();
 
-    // 1. ESTADO PARA O MODAL
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // Este estado armazena a URL da imagem do certificado em tamanho real
     const [selectedCertificateUrl, setSelectedCertificateUrl] = useState('');
 
-    // 2. FUNÇÃO PARA ABRIR O MODAL (passada como onVerifyClick)
     const openCertificateModal = (certificateUrl: string) => {
         setSelectedCertificateUrl(certificateUrl);
         setIsModalOpen(true);
     };
 
-    // 3. FUNÇÃO PARA FECHAR O MODAL
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedCertificateUrl('');
@@ -37,14 +34,22 @@ const Certifications = () => {
     const certificates = [
         {
             id: 1,
-            name: "Residência de Software",
+            name: "Residência de Software - Fase 1",
             issuer: "Cepedi",
-            imageUrl: CertificadoResidencia,
-            credentialUrl: CertificadoResidencia,
+            imageUrl: CertificadoResidenciaFase1,
+            credentialUrl: CertificadoResidenciaFase1,
             issuedDate: "Jul 2024"
         },
         {
             id: 2,
+            name: "Residência de Software - Fase 2",
+            issuer: "Cepedi",
+            imageUrl: CertificadoResidenciaFase2,
+            credentialUrl: CertificadoResidenciaFase2,
+            issuedDate: "Ja 2025" 
+        },
+        {
+            id: 3,
             name: "HTML e CSS",
             issuer: "Profissão Programador",
             imageUrl: CertificationProfissao,
@@ -52,7 +57,7 @@ const Certifications = () => {
             issuedDate: "Maio 2024"
         },
         {
-            id: 3,
+            id: 4,
             name: "Curso básico de CSS",
             issuer: "Hora de Codar",
             imageUrl: CertificationHoradecodar,
@@ -60,7 +65,7 @@ const Certifications = () => {
             issuedDate: "Jan 2025"
         },
         {
-            id: 4,
+            id: 5,
             name: "Front-end",
             issuer: "Salvador Tech - Unifel",
             imageUrl: CertificationUnifel,
@@ -68,7 +73,7 @@ const Certifications = () => {
             issuedDate: "Abril 2024"
         },
         {
-            id: 5,
+            id: 6,
             name: "Figma para Devs",
             issuer: "Ada Tech",
             imageUrl: CertificationFigma,
@@ -76,7 +81,7 @@ const Certifications = () => {
             issuedDate: "Jan 2025"
         },
         {
-            id: 6,
+            id: 7,
             name: "Git e Versionamento",
             issuer: "Ada Tech",
             imageUrl: CertificationGit,
@@ -84,7 +89,7 @@ const Certifications = () => {
             issuedDate: "Dez 2024"
         },
         {
-            id: 7,
+            id: 8,
             name: "Git e Github",
             issuer: "CPDS",
             imageUrl: CertificationGithub,
@@ -92,7 +97,7 @@ const Certifications = () => {
             issuedDate: "Out 2024"
         },
         {
-            id: 8,
+            id: 9,
             name: "HTML e CSS",
             issuer: "Alura",
             imageUrl: CertificationAlura2,
@@ -100,7 +105,7 @@ const Certifications = () => {
             issuedDate: "Ago 2025"
         },
         {
-            id: 9,
+            id: 10,
             name: "Git e Github",
             issuer: "Alura",
             imageUrl: CertificationAlura,
@@ -108,7 +113,7 @@ const Certifications = () => {
             issuedDate: "Ago 2025"
         },
         {
-            id: 10,
+            id: 11,
             name: "React",
             issuer: "Ada Tech",
             imageUrl: CertificationReact,
@@ -141,11 +146,10 @@ const Certifications = () => {
                 </div>
             </div>
 
-            {/* 5. O COMPONENTE MODAL (Lightbox) */}
             {isModalOpen && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 transition-opacity"
-                    onClick={closeModal} // Fecha ao clicar fora
+                    onClick={closeModal}
                 >
                     <div className="relative max-w-5xl max-h-[90vh] p-4" onClick={(e) => e.stopPropagation()}>
                         <img
@@ -153,7 +157,7 @@ const Certifications = () => {
                             alt="Certificado em tamanho maior"
                             className="w-full h-full object-contain shadow-2xl rounded-lg"
                         />
-                        {/* Botão de Fechar */}
+
                         <button
                             className="absolute top-2 right-2 text-[var(--error)] text-4xl font-bold bg-transparent border-none p-2 cursor-pointer transition hover:text-[var(--primary-500)]"
                             onClick={closeModal}

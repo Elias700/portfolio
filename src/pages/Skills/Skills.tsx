@@ -104,7 +104,11 @@ const Skills = () => {
               >
                 <section className='flex flex-col items-center p-6 md:p-8 text-center cursor-pointer'>
                   <item.icon size={44} color="#00B58C" />
-                  <h3 className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" style={{ textShadow: 'var(--card-title-shadow)' }}>{item.title}</h3>
+                  <h3 
+                    className="text-lg md:text-xl font-semibold p-4 md:p-5 text-[var(--card-title-color)]" 
+                    style={{ textShadow: 'var(--card-title-shadow)' }}>
+                      {item.title}
+                  </h3>
                   <p className='text-[var(--card-desc-color)] text-sm md:text-base'>{t(item.descKey as any)}</p>
                 </section>
               </div>
