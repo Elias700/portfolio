@@ -51,10 +51,10 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/money-track.git
+https://github.com/Elias700/portfolio.git
 
 # Acesse a pasta do projeto
-cd MoneyTrack-Frontend
+cd portfolio\cd my-portfolio
 
 # Instale as dependências
 npm install
