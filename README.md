@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+# Portfólio — Elias Ribeiro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo:**  
+https://portfolio-peach-sigma-44.vercel.app/
 
-Currently, two official plugins are available:
+Este repositório contém o código-fonte do meu **portfólio pessoal**, desenvolvido para apresentar meus projetos, certificações, habilidades e experiência como **Desenvolvedor Frontend**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Este projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-  **React**
+-  **TypeScript**
+-  **Tailwind CSS**
+-  **Vite**
+-  **Vercel** (Deploy)
+  
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Funcionalidades do Portfólio
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-  Layout totalmente responsivo (mobile, tablet e desktop)
+-  Listagem de projetos com descrição e tecnologias utilizadas
+-  Seção de certificações com visualização em modal
+-  Organização de dados separada por camadas (`data` e `types`)
+-  Componentes reutilizáveis
+-  Animações e efeitos de interação
+-  Código tipado com TypeScript
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Estrutura do Projeto
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+src/
+├── assets/        # Imagens, ícones e certificados
+├── components/    # Componentes reutilizáveis
+├── data/          # Dados estáticos (certificados, projetos, etc.)
+├── hooks/         # Hooks customizados
+├── pages/         # Páginas do portfólio
+├── styles/        # Estilos globais
+├── types/         # Tipagens TypeScript
+└── i18n/          # Internacionalização
+
+
+## Instruções de Instalação
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/money-track.git
+
+# Acesse a pasta do projeto
+cd MoneyTrack-Frontend
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
