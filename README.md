@@ -54,7 +54,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 https://github.com/Elias700/portfolio.git
 
 # Acesse a pasta do projeto
-cd portfolio\cd my-portfolio
+cd portfolio
 
 # Instale as dependências
 npm install
