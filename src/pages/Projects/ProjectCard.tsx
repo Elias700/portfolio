@@ -1,15 +1,8 @@
-import { useTranslation } from '../../i18n/LanguageContext.tsx';
-import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
+import { useTranslation } from '../../i18n/LanguageContext';
+import useScrollVisibility from '../../hooks/useScrollVisibility';
+import { LinkButton } from '../../components/UI/Buttons/LinkButton';
 
-type ProjectProps = {
-    name: string;
-    description: string;
-    imageUrl: string;
-    deployUrl?: string;
-    githubUrl?: string;
-    index: number;
-    threshold?: number;
-};
+import type { ProjectCardProps } from '../../types/projects';
 
 const ProjectCard = ({
     name,
@@ -17,14 +10,17 @@ const ProjectCard = ({
     imageUrl,
     deployUrl,
     githubUrl,
+    figmaUrl,
     index,
     threshold = 0.5,
-}: ProjectProps) => {
+}: ProjectCardProps) => {
     const { t } = useTranslation();
-    const { elementRef, isVisible } = useScrollVisibility<HTMLDivElement>(
-        threshold,
-        '0px 0px -10% 0px'
-    );
+
+    const { elementRef, isVisible } =
+        useScrollVisibility<HTMLDivElement>(
+            threshold,
+            '0px 0px -10% 0px'
+        );
 
     const staggerDelay = index * 150;
 
@@ -36,60 +32,116 @@ const ProjectCard = ({
                 willChange: 'transform, opacity',
             }}
             className={`
-                relative flex flex-col rounded-xl bg-clip-border shadow-md
-                transition-all duration-700 ease-out transform
-                hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00B58C]
+                relative
+                flex
+                flex-col
+                rounded-xl
+                bg-clip-border
+                shadow-md
+                transition-all
+                duration-300
+                ease-out
+                transform
+                hover:scale-[1.02]
+                hover:shadow-2xl
+                hover:shadow-[#00B58C]
                 bg-[var(--card-bg)]
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+                max-w-[380px]        
+                w-full
+                mx-auto 
+                cursor-pointer
+                ${isVisible
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-10'
+                }
             `}
         >
 
-            <div className="relative mx-4 -mt-6 overflow-hidden rounded-xl bg-clip-border shadow-lg aspect-[16/9] sm:aspect-[4/3]">
+            <div
+                className="
+                    relative
+                    mx-4
+                    mt-6
+                    overflow-hidden
+                    rounded-xl
+                    bg-clip-border
+                    shadow-lg
+                    aspect-[16/9]
+                    sm:aspect-[4/3]
+                "
+            >
                 <img
                     src={imageUrl}
                     alt={name}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover"
                 />
             </div>
 
             <div className="px-5 py-4 md:p-6">
                 <h5
-                    className="mb-2 block font-sans text-lg md:text-xl font-semibold leading-snug tracking-normal text-[var(--card-title-color)]"
+                    className="
+                        mb-2
+                        font-sans
+                        text-lg
+                        md:text-xl
+                        font-semibold
+                        leading-snug
+                        tracking-normal
+                        text-[var(--card-title-color)]
+                    "
                     style={{ textShadow: 'var(--card-title-shadow)' }}
                 >
                     {name}
                 </h5>
-                <p className="block font-sans text-sm md:text-base font-light leading-relaxed antialiased text-[var(--card-desc-color)]">
+
+                <p
+                    className="
+                        font-sans
+                        text-sm
+                        md:text-base
+                        font-light
+                        leading-relaxed
+                        antialiased
+                        text-[var(--card-desc-color)]
+                    "
+                >
                     {description}
                 </p>
             </div>
 
-            <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0 flex gap-10 md:gap-10 justify-between">
-                {deployUrl ? (
-                    <a
-                        href={deployUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="select-none rounded-lg bg-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase text-[var(--primary-50)] shadow-md shadow-[var(--primary-500)]/20 transition-all hover:bg-[var(--primary-700)] hover:shadow-lg hover:shadow-[var(--primary-400)]/40 focus:opacity-90 active:opacity-90"
-                    >
-                        {t('projects.deploy')}
-                    </a>
-                ) : (
-                    <div />
-                )}
+            <div
+                className="
+                    px-5
+                    pb-5
+                    md:px-6
+                    md:pb-6
+                    pt-0
+                    flex
+                    justify-between
+                "
+            >
+                <LinkButton
+                    href={deployUrl}
+                    variant="primary"
+                    disabled={!deployUrl}
+                >
+                    {t('projects.deploy')}
+                </LinkButton>
 
-                {githubUrl ? (
-                    <a
-                        href={githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="select-none rounded-lg border border-[var(--primary-500)] text-[var(--primary-500)] py-2 md:py-3 px-4 md:px-6 text-center align-middle font-sans text-xs font-bold uppercase bg-transparent hover:bg-[var(--primary-800)] hover:text-white transition-all duration-300"
-                    >
-                        {t('projects.github')}
-                    </a>
-                ) : (
-                    <div />
-                )}
+                <LinkButton
+                    href={githubUrl}
+                    disabled={!githubUrl}
+                >
+                    {t('projects.github')}
+                </LinkButton>
+
+                <LinkButton
+                    href={figmaUrl}
+                    disabled={!figmaUrl}
+                >
+                    Figma
+                </LinkButton>
+
             </div>
         </div>
     );
