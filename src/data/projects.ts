@@ -10,29 +10,41 @@ export const projects: Project[] = [
     {
         id: 1,
         imageUrl: Nikel,
-        deployUrl: 'https://nikel-mx1qow612-elias700s-projects.vercel.app/',
-        githubUrl: 'https://github.com/Elias700/Nikel',
-        figmaUrl: '',
+        deploy: {
+            url: 'https://nikel.vercel.app',
+        },
+        github: {
+            url: 'https://github.com/Elias700/Nikel',
+        },
     },
     {
         id: 2,
         imageUrl: Batman,
-        deployUrl: 'https://site-batman-roe9a5tt4-elias700s-projects.vercel.app/',
-        githubUrl: 'https://github.com/Elias700/Site-Batman',
-        figmaUrl: '',
+        deploy: {
+            url: 'https://site-batman.vercel.app',
+        },
+        github: {
+            url: 'https://github.com/Elias700/Site-Batman',
+        },
     },
     {
         id: 3,
         imageUrl: RotaDoMar,
-        deployUrl: 'https://rota-do-mar.vercel.app/',
-        githubUrl: 'https://github.com/Elias700/Rota-do-Mar',
-        figmaUrl: '',
+        deploy: {
+            url: 'https://rota-do-mar.vercel.app',
+        },
+        github: {
+            url: 'https://github.com/Elias700/Rota-do-Mar',
+        },
     },
     {
         id: 4,
         imageUrl: ProjetoEmAndamento,
-        githubUrl: 'https://github.com/Elias700/MoneyTrack',
-        figmaUrl: '',
+        github: {
+            url: 'https://github.com/Elias700/MoneyTrack',
+        },
+        figma: {
+            url: 'https://www.figma.com/proto/U8meuPnj6bH074s6CCPZi6/MoneyTrack?node-id=61-85&t=PGOEw1nMZFY1XyDt-0&scaling=contain&content-scaling=fixed&page-id=1%3A4&starting-point-node-id=61%3A85&show-proto-sidebar=1',
+        }
     },
 ];
-

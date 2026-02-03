@@ -8,9 +8,9 @@ const ProjectCard = ({
     name,
     description,
     imageUrl,
-    deployUrl,
-    githubUrl,
-    figmaUrl,
+    deploy,
+    github,
+    figma,
     index,
     threshold = 0.5,
 }: ProjectCardProps) => {
@@ -116,31 +116,44 @@ const ProjectCard = ({
                     md:px-6
                     md:pb-6
                     pt-0
-                    flex
-                    justify-between
                 "
             >
-                <LinkButton
-                    href={deployUrl}
-                    variant="primary"
-                    disabled={!deployUrl}
-                >
-                    {t('projects.deploy')}
-                </LinkButton>
 
-                <LinkButton
-                    href={githubUrl}
-                    disabled={!githubUrl}
+                <div 
+                    className="
+                        flex 
+                        gap-10 
+                    "
                 >
-                    {t('projects.github')}
-                </LinkButton>
+                    {deploy && (
+                        <LinkButton
+                            href={deploy.url}
+                            variant="primary"
+                            disabled={deploy.disabled}
+                        >
+                            {t('projects.deploy')}
+                        </LinkButton>
+                    )}
 
-                <LinkButton
-                    href={figmaUrl}
-                    disabled={!figmaUrl}
-                >
-                    Figma
-                </LinkButton>
+                    {github && (
+                        <LinkButton
+                            href={github.url}
+                            disabled={github.disabled}
+                        >
+                            {t('projects.github')}
+                        </LinkButton>
+                    )}
+
+                    {figma && (
+                        <LinkButton
+                            href={figma.url}
+                            disabled={figma.disabled}
+                        >
+                            Figma
+                        </LinkButton>
+                    )}
+                </div>
+
 
             </div>
         </div>

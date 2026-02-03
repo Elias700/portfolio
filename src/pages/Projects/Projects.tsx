@@ -84,13 +84,13 @@ const Projects = () => {
           md:px-10
         "
       >
-        <div 
+        <div
           className="
             grid 
             grid-cols-1 
             sm:grid-cols-2 
             lg:grid-cols-3 
-            gap-8
+            gap-5
           "
         >
           {projects.map((project, index) => (
@@ -99,9 +99,9 @@ const Projects = () => {
               name={t(`projects.item.${getKey(project.id)}.name`)}
               description={t(`projects.item.${getKey(project.id)}.desc`)}
               imageUrl={project.imageUrl}
-              deployUrl={project.deployUrl}
-              githubUrl={project.githubUrl}
-              figmaUrl={project.figmaUrl}
+              deploy={project.deploy}
+              github={project.github}
+              figma={project.figma}
               index={index}
             />
           ))}
