@@ -1,3 +1,4 @@
+
 type LinkButtonProps = {
     href?: string;
     children: React.ReactNode;
@@ -16,6 +17,7 @@ export function LinkButton({
             href={disabled ? undefined : href}
             onClick={disabled ? (e) => e.preventDefault() : undefined}
             aria-disabled={disabled}
+            target="blank"
             className={`
                 px-4 py-2 rounded-md text-sm font-medium transition
                 ${variant === 'primary' 
