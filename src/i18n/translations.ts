@@ -37,6 +37,9 @@ export type TranslationDict = {
   'projects.item.moneytrack.desc': string;
   'projects.item.intellij.name': string;
   'projects.item.intellij.desc': string;
+  'projects.item.gameexplorer.name': string;
+  'projects.item.gameexplorer.desc': string;
+
   // --- FIM CHAVES NOVAS ---
   'projects.item.bmi.name': string;
   'projects.item.bmi.desc': string;
@@ -107,6 +110,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.moneytrack.desc': 'Aplicativo de acompanhamento financeiro em desenvolvimento, focado em capacitar os usuários a gerenciar seu dinheiro com clareza e controle. A plataforma centraliza despesas, categorias, histórico e insights, oferecendo uma experiência intuitiva e organizada para monitorar as finanças e melhorar o orçamento.',
     'projects.item.intellij.name': 'IntelliJ IDEA',
     'projects.item.intellij.desc': 'O IntelliJ IDEA é uma IDE poderosa voltada ao desenvolvimento Java e multiplataforma, oferecendo ferramentas avançadas de produtividade, análise de código e suporte a frameworks modernos.',
+    'projects.item.gameexplorer.name': 'Game Explorer',
+    'projects.item.gameexplorer.desc': 'Aplicação de descoberta de jogos desenvolvida com React, utilizando a API RAWG para exibir títulos, categorias e informações detalhadas sobre games. O projeto foi criado para colocar em prática conceitos de API REST e consumo de dados com Axios, explorando integração com serviços externos e organização de dados no front-end.',
+
 
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'Calculadora IMC',
@@ -181,6 +187,8 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.moneytrack.desc': 'Financial tracking app in development focused on empowering users to manage their money with clarity and control. The platform centralizes expenses, categories, history, and insights, delivering an intuitive and organized experience for monitoring finances and improving budgeting.',
     'projects.item.intellij.name': 'IntelliJ IDEA',
     'projects.item.intellij.desc': 'IntelliJ IDEA is a powerful IDE focused on Java and multi-platform development, offering advanced productivity tools, code analysis, and support for modern frameworks.',
+    'projects.item.gameexplorer.name': 'Game Explorer',
+    'projects.item.gameexplorer.desc': 'Game discovery application developed with React, using the RAWG API to display titles, categories, and detailed information about games. The project was created to put into practice concepts of REST API and data consumption with Axios, exploring integration with external services and data organization on the front-end.',
     // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'BMI Calculator',
     'projects.item.bmi.desc': 'Calculate BMI',

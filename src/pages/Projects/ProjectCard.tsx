@@ -22,13 +22,10 @@ const ProjectCard = ({
             '0px 0px -10% 0px'
         );
 
-    const staggerDelay = index * 150;
-
     return (
         <div
             ref={elementRef}
             style={{
-                transitionDelay: `${staggerDelay}ms`,
                 willChange: 'transform, opacity',
             }}
             className={`
@@ -119,7 +116,7 @@ const ProjectCard = ({
                 "
             >
 
-                <div 
+                <div
                     className="
                         flex 
                         gap-10 
@@ -152,8 +149,8 @@ const ProjectCard = ({
                             Figma
                         </LinkButton>
                     )}
-                </div>
 
+                </div>
 
             </div>
         </div>

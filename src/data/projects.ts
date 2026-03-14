@@ -47,4 +47,11 @@ export const projects: Project[] = [
             url: 'https://www.figma.com/proto/U8meuPnj6bH074s6CCPZi6/MoneyTrack?node-id=61-85&t=PGOEw1nMZFY1XyDt-0&scaling=contain&content-scaling=fixed&page-id=1%3A4&starting-point-node-id=61%3A85&show-proto-sidebar=1',
         }
     },
+    {
+        id: 5,
+        imageUrl: ProjetoEmAndamento,
+         github: {
+            url: 'https://github.com/Elias700/GameExplorer',
+        }
+    }
 ];

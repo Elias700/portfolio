@@ -17,7 +17,7 @@ const Projects = () => {
 
   const getKey = (
     id: number
-  ): 'nikel' | 'batman' | 'rotadomar' | 'moneytrack' => {
+  ): 'nikel' | 'batman' | 'rotadomar' | 'moneytrack' | 'gameexplorer' => {
     switch (id) {
       case 1:
         return 'nikel';
@@ -27,6 +27,8 @@ const Projects = () => {
         return 'rotadomar';
       case 4:
         return 'moneytrack';
+      case 5:
+        return 'gameexplorer';
       default:
         throw new Error(`Invalid project id: ${id}`);
     }
