@@ -1,6 +1,4 @@
 
-// src/data/certificates.ts
-
 import CertificadoResidenciaFase1 from '../assets/CertificationResidencia.png';
 import CertificadoResidenciaFase2 from '../assets/certificado-cepedi-fase2.png';
 import CertificationProfissao from '../assets/CertificationProfissaoProgramador.png';
@@ -13,7 +11,7 @@ import CertificationAlura from '../assets/Certification-alura.png';
 import CertificationAlura2 from '../assets/CertificationAlura2.png';
 import CertificationReact from '../assets/CertificationReact.png';
 import CertificationNucleoAcademy from '../assets/CertificationNucleoAcademy.png';
-
+import CertificationGrowdev from '../assets/CertificationGrowdev.png';
 import type { Certificate } from '../types/certificate';
 
 export const certificates: Certificate[] = [
@@ -112,5 +110,12 @@ export const certificates: Certificate[] = [
         imageUrl: CertificationNucleoAcademy,
         credentialUrl: CertificationNucleoAcademy,
         issuedDate: "Jan 2025"
+    },{
+        id: 13,
+        name: "2ª Edição do Bootcamp com Empresas",
+        issuer: "Grow Dev",
+        imageUrl: CertificationGrowdev,
+        credentialUrl: CertificationGrowdev,
+        issuedDate: "Maio 2026"
     }
 ];

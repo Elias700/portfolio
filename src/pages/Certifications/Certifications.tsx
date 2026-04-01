@@ -27,12 +27,12 @@ const Certifications: FC = () => {
 
             <div
                 className="
-                        max-w-6xl 
-                        mx-auto 
-                        px-6 py-8 
-                        md:px-10 
-                        md:py-12
-                    "
+                    max-w-6xl 
+                    mx-auto 
+                    px-6 py-8 
+                    md:px-10 
+                    md:py-12
+                "
             >
                 <h2
                     className="
@@ -46,12 +46,12 @@ const Certifications: FC = () => {
                 </h2>
                 <h1
                     className="
-                            text-center 
-                            text-4xl 
-                            md:text-6xl 
-                            lg:text-7xl 
-                            text-[var(--subtitle-color)]
-                        "
+                        text-center 
+                        text-4xl 
+                        md:text-6xl 
+                        lg:text-7xl 
+                        text-[var(--subtitle-color)]
+                    "
                 >
                     {t('certifications.subtitle')}
                 </h1>
