@@ -35,8 +35,6 @@ export type TranslationDict = {
   'projects.item.rotadomar.desc': string;
   'projects.item.moneytrack.name': string;
   'projects.item.moneytrack.desc': string;
-  'projects.item.intellij.name': string;
-  'projects.item.intellij.desc': string;
   'projects.item.gameexplorer.name': string;
   'projects.item.gameexplorer.desc': string;
 
@@ -61,9 +59,9 @@ export type TranslationDict = {
   'learning.title': string;
   'learning.subtitle': string;
   'learning.mysql.desc': string;
-  'learning.java.desc': string;
   'learning.apirest.desc': string,
   'learning.poo.desc': string;
+  'learning.nodejs.desc': string;
   // Contact
   'contact.title': string;
   'contact.subtitle': string;
@@ -99,7 +97,7 @@ export const translations: Record<Lang, TranslationDict> = {
     // Projects
     'projects.title': 'Projetos',
     'projects.subtitle': 'Meus Projetos Principais',
-    // --- VALORES NOVOS ADICIONADOS AQUI ---
+    
     'projects.item.nikel.name': 'Nikel - Gestão Financeira',
     'projects.item.nikel.desc': 'Sistema completo de gestão financeira com autenticação de usuários, permitindo controle detalhado de transações, análise de gastos e acompanhamento inteligente do orçamento.',
     'projects.item.batman.name': 'The Batman',
@@ -108,13 +106,8 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.rotadomar.desc': 'Projeto de guia digital completo sobre as praias de Salvador, fornecendo informações ricas (belezas,       história, curiosidades) e dados práticos (clima e maré) para planejar a visita perfeita.',
     'projects.item.moneytrack.name': 'Money Track',
     'projects.item.moneytrack.desc': 'Aplicativo de acompanhamento financeiro em desenvolvimento, focado em capacitar os usuários a gerenciar seu dinheiro com clareza e controle. A plataforma centraliza despesas, categorias, histórico e insights, oferecendo uma experiência intuitiva e organizada para monitorar as finanças e melhorar o orçamento.',
-    'projects.item.intellij.name': 'IntelliJ IDEA',
-    'projects.item.intellij.desc': 'O IntelliJ IDEA é uma IDE poderosa voltada ao desenvolvimento Java e multiplataforma, oferecendo ferramentas avançadas de produtividade, análise de código e suporte a frameworks modernos.',
     'projects.item.gameexplorer.name': 'Game Explorer',
     'projects.item.gameexplorer.desc': 'Aplicação de descoberta de jogos desenvolvida com React, utilizando a API RAWG para exibir títulos, categorias e informações detalhadas sobre games. O projeto foi criado para colocar em prática conceitos de API REST e consumo de dados com Axios, explorando integração com serviços externos e organização de dados no front-end.',
-
-
-    // --- FIM VALORES NOVOS ---
     'projects.item.bmi.name': 'Calculadora IMC',
     'projects.item.bmi.desc': 'Calcular IMC',
     'projects.deploy': 'Deploy',
@@ -135,9 +128,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'learning.title': 'Habilidades',
     'learning.subtitle': 'Habilidades em aprendizado',
     'learning.mysql.desc': 'O MySQL Workbench é uma ferramenta gráfica oficial do MySQL usada para modelagem, desenvolvimento e administração de bancos de dados.',
-    'learning.java.desc': 'Java é uma linguagem de programação robusta e orientada a objetos, amplamente utilizada no desenvolvimento de aplicações web, desktop e mobile. Sua principal característica é a portabilidade.',
     'learning.apirest.desc': 'Uma API REST é uma interface de comunicação que permite a interação entre sistemas através de requisições HTTP, utilizando princípios da arquitetura REST.',
     'learning.poo.desc': 'A Programação Orientada a Objetos é um paradigma que organiza o código em torno de objetos, que são instâncias de classes e contêm dados (atributos) e comportamentos (métodos).',
+    'learning.nodejs.desc': 'Node.js é um ambiente de execução JavaScript construído sobre o motor V8 do Chrome que permite aos desenvolvedores executar JavaScript no lado do servidor, possibilitando a criação de aplicações escaláveis e de alto desempenho.',
     //Certifications
     'certifications.title': 'Certificados',
     'certifications.subtitle': 'Minhas Formações',
@@ -185,8 +178,6 @@ export const translations: Record<Lang, TranslationDict> = {
     'projects.item.rotadomar.desc': 'Complete digital guide project about the beaches of Salvador, providing rich information (beauty, history, curiosities) and practical data (weather and tides) to plan the perfect visit.',
     'projects.item.moneytrack.name': 'Money Track',
     'projects.item.moneytrack.desc': 'Financial tracking app in development focused on empowering users to manage their money with clarity and control. The platform centralizes expenses, categories, history, and insights, delivering an intuitive and organized experience for monitoring finances and improving budgeting.',
-    'projects.item.intellij.name': 'IntelliJ IDEA',
-    'projects.item.intellij.desc': 'IntelliJ IDEA is a powerful IDE focused on Java and multi-platform development, offering advanced productivity tools, code analysis, and support for modern frameworks.',
     'projects.item.gameexplorer.name': 'Game Explorer',
     'projects.item.gameexplorer.desc': 'Game discovery application developed with React, using the RAWG API to display titles, categories, and detailed information about games. The project was created to put into practice concepts of REST API and data consumption with Axios, exploring integration with external services and data organization on the front-end.',
     // --- FIM VALORES NOVOS ---
@@ -210,9 +201,9 @@ export const translations: Record<Lang, TranslationDict> = {
     'learning.title': 'Skills',
     'learning.subtitle': 'Skills I\'m learning',
     'learning.mysql.desc': 'MySQL Workbench is the official MySQL graphical tool used for database modeling, development, and administration.',
-    'learning.java.desc': 'Java is a robust, object-oriented programming language widely used for web, desktop, and mobile applications. Its main feature is portability.',
     'learning.apirest.desc': 'A REST API is a communication interface that allows interaction between systems through HTTP requests, using principles of REST architecture.',
     'learning.poo.desc': 'Object-Oriented Programming is a paradigm that organizes code around objects, which are instances of classes and contain data (attributes) and behaviors (methods).',
+    'learning.nodejs.desc': 'Node.js is a JavaScript runtime built on Chrome\'s V8 engine that allows developers to run JavaScript on the server side, enabling the creation of scalable and high-performance applications.',
     //Certifications
     'certifications.title': 'Certificates',
     'certifications.subtitle': 'My Certifications',

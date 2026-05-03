@@ -1,26 +1,20 @@
-import { DiMysql, DiJava } from "react-icons/di";
+import { DiMysql } from "react-icons/di";
 import { FaNetworkWired } from 'react-icons/fa';
 import { useTranslation } from '../../i18n/LanguageContext.tsx';
 import useScrollVisibility from '../../hooks/useScrollVisibility.ts';
 import { FaCubes } from 'react-icons/fa';
-import { SiIntellijidea } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import type { Skills } from "../../types/skills.ts";
 
 
 const LearningSkills = () => {
     const { t } = useTranslation();
 
-    type Skills = {
-        title: string,
-        description: string,
-        icon: any
-    };
-
     const skills: Skills[] = [
         { title: 'MySQL Workbench', description: t('learning.mysql.desc'), icon: DiMysql },
-        { title: 'Java', description: t('learning.java.desc'), icon: DiJava },
         { title: 'Api Rest', description: t('learning.apirest.desc'), icon: FaNetworkWired },
         { title: 'POO', description: t('learning.poo.desc'), icon: FaCubes },
-        { title: 'IntelliJ IDEA', description: t('projects.item.intellij.desc'), icon: SiIntellijidea },
+        { title: 'Node.js', description: t('learning.nodejs.desc'), icon: FaNodeJs },
     ];
 
     const { elementRef: titleRef, isVisible: titleVisible } = useScrollVisibility<HTMLDivElement>(0.8);
